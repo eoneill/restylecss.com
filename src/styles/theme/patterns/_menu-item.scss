@@ -1,0 +1,41 @@
+@include restyle-define(menu-item, (
+  '@restyle.modifiers': (
+    in a sidebar: (
+      line-height: 2,
+      color: palette(gray, light),
+      display: block,
+      width: 100%,
+      position: relative,
+
+      '@restyle.var notch-width': 0.7em,
+
+      '&::after': (
+        //content: "", // :(
+        width: 0,
+        height: 0,
+        border-top: '@var.notch-width' solid transparent,
+        border-bottom: '@var.notch-width' solid transparent,
+        border-right: 0 solid palette(canvas),
+        position: absolute,
+        right: -20px,
+        top: 50%,
+        margin-top: -0.7em,
+        transition: ease-in-out 0.2s
+      ),
+
+      '@restyle.states': (
+        hover: (
+          color: palette(gray, lightest)
+        ),
+        active: (
+          color: palette(accent, yellow)
+        ),
+        hover-active: (
+          '&::after' : (
+            border-right-width: '@var.notch-width'
+          )
+        )
+      )
+    )
+  )
+));

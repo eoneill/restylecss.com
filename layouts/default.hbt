@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  {{> head}}
+</head>
+<body class="{{ page.class }}" id="{{ page.id }}">
+  {{> header title=page.title}}
+
+  <div id="global-container">
+    {{>sidebar collections=page.aside}}
+
+    <main id="global-main">
+      <div id="global-content">
+        {{{ contents }}}
+      </div>
+    </main>
+  </div>
+
+  {{> footer }}
+</body>
+</html>

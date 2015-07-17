@@ -1,0 +1,19 @@
+@include restyle-define(logo, (
+  background: palette(brand) url(/images/logos/logo.png) no-repeat 0 0,
+  background-size: 100%,
+  border-radius: 5px,
+  width: 144px,
+  height: 55px,
+  display: inline-block,
+  font-size: 0,
+  overflow: hidden,
+  color: transparent,
+  text-decoration: none,
+  transition: ease-in-out 0.3s,
+
+  "@restyle.states": (
+    hover: (
+      background-color: palette(accent, dark)
+    )
+  )
+));

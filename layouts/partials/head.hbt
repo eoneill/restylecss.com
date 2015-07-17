@@ -1,0 +1,36 @@
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>{{#if page.title}}{{ page.title }} {{#if page.tagline}}({{ page.tagline }}) {{/if}}| {{/if}}{{ site.title }}</title>
+{{#if page.author.name }}<meta name="author" content="{{ page.author.name }}"/>{{/if}}
+
+{{>stylesheets styles=site.styles}}
+{{>stylesheets styles=template-styles}}
+{{>stylesheets styles=page.styles}}
+
+<link rel="canonical" href="{{ page.permalink }}"/>
+
+<meta property="og:site_name" content="{{ site.title }}"/>
+<meta property="og:title" content="{{or page.title site.title}}"/>
+<meta property="og:type" content="{{or page.meta.type 'article'}}"/>
+<meta property="og:url" content="{{ page.permalink }}"/>
+
+{{#if (or page.meta.image site.meta.image)}}
+  <meta property="og:image" content="{{or page.meta.image site.meta.image}}"/>
+{{/if}}
+
+{{#if (or page.description site.description)}}
+  <meta property="og:description" content="{{or page.description site.description}}"/>
+  <meta name="description" content="{{or page.description site.description}}"/>
+{{/if}}
+
+{{>livereload}}
+{{>scripts-head}}
+
+<link rel="icon" type="image/x-icon" href="{{link 'favicon.ico'}}"/>
+<link rel="apple-touch-icon" sizes="180x180" href="{{link 'images/logos/apple-icon-180x180.png'}}"/>
+<meta name="msapplication-TileImage" content="{{link 'images/logos//ms-icon-144x144.png'}}"/>
+<link rel="icon" type="image/png" sizes="192x192"  href="{{link 'images/logos/android-icon-192x192.png'}}"/>
+{{#if site.themeColor}}
+  <meta name="theme-color" content="{{site.themeColor}}"/>
+  <meta name="msapplication-TileColor" content="{{site.themeColor}}"/>
+{{/if}}

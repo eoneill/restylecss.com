@@ -1,0 +1,4 @@
+@include restyle-define(canvas, (
+  background-color: palette(canvas),
+  '@restyle': copy
+));

@@ -1,0 +1,3 @@
+{{#each styles as |sheet|}}
+<link href="{{link-css sheet}}" rel="stylesheet"/>
+{{/each}}

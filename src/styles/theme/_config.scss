@@ -1,0 +1,5 @@
+@include restyle-add-state((
+  hover: "&:hover, &.hover",
+  active: "&:active, &.active",
+  hover-active: "&:hover, &.hover, &:active, &.active"
+));

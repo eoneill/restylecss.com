@@ -1,0 +1,3 @@
+{{#if livereload.host}}
+<script src="http://{{livereload.host}}/livereload.js"></script>
+{{/if}}

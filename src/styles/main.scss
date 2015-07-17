@@ -1,0 +1,102 @@
+@import "./theme/baseline";
+
+/* font-family: #{font-family(sans-serif)} */
+
+html,
+body {
+  @include restyle(canvas);
+}
+
+#global-header {
+  padding: 20px;
+  border-bottom: 10px solid palette(brand);
+  .brand {
+    @include restyle(logo) {
+      vertical-align: middle;
+    };
+  }
+
+  h1 {
+    @include restyle(title) {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+    };
+  }
+}
+
+#global-footer {
+  padding: 20px;
+  font-size: 16px;
+  background-color: palette(badge);
+  color: palette(gray, light);
+
+  .copyright {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .badges {
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+    .badge {
+      vertical-align: middle;
+    }
+  }
+}
+
+$sidebar-width: 240px;
+#global-container {
+  width: 100%;
+  display: flex;
+  flex: 0 1 auto;
+}
+
+#global-sidebar,
+#global-main {
+  // use border-box so our grids work correctly
+  box-sizing: border-box;
+}
+
+#global-sidebar {
+  @include restyle(sidebar) {
+    flex: 0 0 $sidebar-width;
+    padding: 40px 20px;
+  };
+
+  a {
+    @include restyle(menu-item in a sidebar) {
+      &::after {
+        content: "";
+      }
+    };
+  }
+
+  h2 {
+    @include restyle(headline in a sidebar);
+  }
+}
+
+#global-main {
+  flex: 0 0 100%;
+  padding: 100px 20px;
+}
+
+#global-content {
+  max-width: 900px;
+  margin: 0 auto;
+
+  h2 {
+    @include restyle(large headline) {
+      // lame :(
+      &::before {
+        content: "";
+      }
+    };
+  }
+}
+
+#global-sidebar + #global-main {
+  flex: 0 0 calc(100% - #{$sidebar-width});
+}

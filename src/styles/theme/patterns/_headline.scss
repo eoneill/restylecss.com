@@ -1,0 +1,29 @@
+@include restyle-define(headline, (
+  color: palette(brand),
+  font-weight: bold,
+  text-transform: uppercase,
+  font-family: font-family(sans-serif),
+
+  '@restyle.modifiers': (
+    large: (
+      padding-top: 0,
+      position: relative,
+      font-size: 50px,
+      // add a nifty separator bar
+      '&::before': (
+        background-color: palette(brand),
+        bottom: 10px,
+        //content: "", // TODO - hopefully node-sass will fix this :|
+        height: 8px,
+        left: 0,
+        position: absolute,
+        right: 0
+      )
+    ),
+
+    in a sidebar: (
+      font-size: 14px,
+      color: palette(accent, yellow)
+    )
+  )
+));

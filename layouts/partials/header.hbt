@@ -1,0 +1,6 @@
+<header id="global-header">
+  <div>
+    <a class="brand" href="{{link ''}}">{{ site.title }}</a>
+    <h1>{{or title page.altTitle}}</h1>
+  </div>
+</header>

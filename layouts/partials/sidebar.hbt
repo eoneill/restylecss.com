@@ -1,0 +1,15 @@
+{{#if collections}}
+  <aside id="global-sidebar">
+    <h2>Configuration</h2>
+    <a href="#">Sidebar</a>
+    <a href="#">Sidebar</a>
+    <a href="#" class="active">Sidebar</a>
+    <a href="#">Sidebar</a>
+    <a href="#">Sidebar</a>
+    <a href="#">Sidebar</a>
+    <a href="#">Sidebar</a>
+    <a href="#">Sidebar</a>
+    <a href="#">Sidebar</a>
+    <a href="#">Sidebar</a>
+  </aside>
+{{/if}}

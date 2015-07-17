@@ -1,0 +1,13 @@
+$-theme-font-family: (
+  sans-serif: (Open Sans, Helvetica Neue Light, Helvetica Neue, Arial, sans-serif),
+  serif: TODO,
+  monospace: TODO
+);
+
+@function font-family($types...) {
+  $font: $-theme-font-family;
+  @each $type in $types {
+    $font: map-get($font, $type);
+  }
+  @return $font;
+}

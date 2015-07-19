@@ -50,6 +50,7 @@ $sidebar-width: 240px;
   width: 100%;
   display: flex;
   flex: 0 1 auto;
+  overflow: hidden;
 }
 
 #global-sidebar,
@@ -84,6 +85,9 @@ $sidebar-width: 240px;
 
   h2 {
     @include restyle(large headline);
+    .full-width & {
+      @include restyle(full-width large headline);
+    }
   }
 }
 

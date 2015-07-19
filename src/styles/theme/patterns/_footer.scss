@@ -1,0 +1,5 @@
+@include restyle-define(footer, (
+  background-color: palette(badge),
+  color: palette(gray, light),
+  font-size: 16px
+));

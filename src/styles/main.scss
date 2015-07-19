@@ -8,8 +8,8 @@ body {
 }
 
 #global-header {
+  @include restyle(global header);
   padding: 20px;
-  border-bottom: 10px solid palette(brand);
   .brand {
     @include restyle(logo) {
       vertical-align: middle;
@@ -26,10 +26,9 @@ body {
 }
 
 #global-footer {
+  @include restyle(global footer);
   padding: 20px;
-  font-size: 16px;
-  background-color: palette(badge);
-  color: palette(gray, light);
+  overflow: hidden; // clearfix
 
   .copyright {
     display: inline-block;
@@ -66,11 +65,7 @@ $sidebar-width: 240px;
   };
 
   a {
-    @include restyle(menu-item in a sidebar) {
-      &::after {
-        content: "";
-      }
-    };
+    @include restyle(menu-item in a sidebar);
   }
 
   h2 {
@@ -88,12 +83,7 @@ $sidebar-width: 240px;
   margin: 0 auto;
 
   h2 {
-    @include restyle(large headline) {
-      // lame :(
-      &::before {
-        content: "";
-      }
-    };
+    @include restyle(large headline);
   }
 }
 

@@ -6,6 +6,7 @@
 
     {{#if site.badges}}
       <p class="badges">
+        {{!-- TODO: DRY this up --}}
         <a href="https://github.com/{{ site.git.account }}/{{ site.git.repo }}/fork"><img class="badge" src="{{site.badges}}/github/forks/{{ site.git.account }}/{{ site.git.repo }}.svg?style=flat-square" alt="Forks on GitHub"/></a>
         <a href="https://github.com/{{ site.git.account }}/{{ site.git.repo }}/"><img class="badge" src="{{site.badges}}/github/stars/{{ site.git.account }}/{{ site.git.repo }}.svg?style=flat-square" alt="Stars on GitHub"/></a>
         <a href="https://github.com/{{ site.git.account }}/{{ site.git.repo }}/issues"><img class="badge" src="{{site.badges}}/github/issues-raw/{{ site.git.account }}/{{ site.git.repo }}.svg?style=flat-square" alt="Issues on GitHub"/></a>

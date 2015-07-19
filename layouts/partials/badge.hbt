@@ -1,0 +1,1 @@
+<a href="{{url}}"><img class="badge" src="{{img}}?style=flat-square" alt="{{alt}}" target="_blank"/></a>

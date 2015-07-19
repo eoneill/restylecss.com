@@ -7,19 +7,18 @@
       width: 100%,
       position: relative,
 
-      '@restyle.var notch-width': 0.7em,
-
       '&::after': (
-        //content: "", // :(
+        // TODO - cleanup magic numbers
+        content: "",
         width: 0,
         height: 0,
-        border-top: '@var.notch-width' solid transparent,
-        border-bottom: '@var.notch-width' solid transparent,
+        border-top: 11px solid transparent,
+        border-bottom: 11px solid transparent,
         border-right: 0 solid palette(canvas),
         position: absolute,
         right: -20px,
         top: 50%,
-        margin-top: -0.7em,
+        margin-top: -11px,
         transition: ease-in-out 0.2s
       ),
 
@@ -32,7 +31,7 @@
         ),
         hover-active: (
           '&::after' : (
-            border-right-width: '@var.notch-width'
+            border-right-width: 11px
           )
         )
       )

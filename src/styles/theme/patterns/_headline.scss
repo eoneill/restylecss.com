@@ -12,8 +12,8 @@
       // add a nifty separator bar
       '&::before': (
         background-color: palette(brand),
-        bottom: 10px,
-        //content: "", // TODO - hopefully node-sass will fix this :|
+        bottom: 12px,
+        content: "",
         height: 8px,
         left: 0,
         position: absolute,
@@ -23,7 +23,8 @@
 
     in a sidebar: (
       font-size: 14px,
-      color: palette(accent, yellow)
+      color: palette(gray, lightest),
+      text-shadow: rgba(palette(gray, darkest), 0.2) 1px 1px
     )
   )
 ));

@@ -1,0 +1,15 @@
+@include restyle-define(anchor, (
+  text-decoration: none,
+  cursor: pointer,
+  color: palette(brand),
+
+  '@restyle.states': (
+    hover: (
+      color: palette(accent, blue),
+      text-decoration: underline
+    ),
+    visited: (
+      color: palette(accent, purple)
+    )
+  )
+));

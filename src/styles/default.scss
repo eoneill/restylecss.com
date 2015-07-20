@@ -37,10 +37,13 @@ body {
 
   .badges {
     display: inline-block;
-    vertical-align: middle;
     float: right;
     .badge {
-      vertical-align: middle;
+      font: 0/0 a;
+      color: transparent;
+      img {
+        vertical-align: middle;
+      }
     }
   }
 }
@@ -91,8 +94,25 @@ $sidebar-width: 240px;
     }
   }
 
-  p {
+  h3 {
+    @include restyle(medium headline);
+  }
+  h4 {
+    @include restyle(small headline);
+  }
+  h5 {
+    @include restyle(extra small headline);
+  }
+  h6 {
+    @include restyle(tiny headline);
+  }
+
+  > p {
     margin: 20px 0;
+  }
+
+  a {
+    @include restyle(anchor);
   }
 }
 
@@ -106,6 +126,19 @@ code {
   pre & {
     @include restyle(block code);
   }
+
+  h1 &,
+  h2 &,
+  h3 &,
+  h4 &,
+  h5 &,
+  h6 & {
+    @include restyle(code in a headline);
+  }
+}
+
+blockquote {
+  @include restyle(blockquote);
 }
 
 @import "../../node_modules/highlight.js/styles/tomorrow-night.css";

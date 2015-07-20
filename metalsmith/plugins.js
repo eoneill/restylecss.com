@@ -31,6 +31,8 @@ module.exports = function(config) {
     // disable minifiers
     plugins.htmlMinifier = noop;
     plugins.uglify = noop;
+    // allow drafts in dev mode
+    plugins.drafts = noop;
   }
 
   //console.log("metalsmith plugins available:", Object.keys(plugins));

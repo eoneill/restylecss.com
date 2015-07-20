@@ -4,16 +4,6 @@
       {{ site.copyright.holder }} &copy; {{ site.copyright.year }}
     </p>
 
-    {{#if site.badges}}
-      <p class="badges">
-        {{!-- TODO: DRY this up --}}
-        <a href="https://github.com/{{ site.git.account }}/{{ site.git.repo }}/fork"><img class="badge" src="{{site.badges}}/github/forks/{{ site.git.account }}/{{ site.git.repo }}.svg?style=flat-square" alt="Forks on GitHub"/></a>
-        <a href="https://github.com/{{ site.git.account }}/{{ site.git.repo }}/"><img class="badge" src="{{site.badges}}/github/stars/{{ site.git.account }}/{{ site.git.repo }}.svg?style=flat-square" alt="Stars on GitHub"/></a>
-        <a href="https://github.com/{{ site.git.account }}/{{ site.git.repo }}/issues"><img class="badge" src="{{site.badges}}/github/issues-raw/{{ site.git.account }}/{{ site.git.repo }}.svg?style=flat-square" alt="Issues on GitHub"/></a>
-        <a href="https://travis-ci.org/{{ site.git.account }}/{{ site.git.repo }}"><img class="badge" src="{{site.badges}}/travis/{{ site.git.account }}/{{ site.git.repo }}.svg?style=flat-square" alt="Build Status"/></a>
-        <a href="https://www.npmjs.com/package/{{ site.git.repo }}"><img class="badge" src="{{site.badges}}/npm/v/{{ site.git.repo }}.svg?style=flat-square" alt="Version"/></a>
-        <a href="https://github.com/{{ site.git.account }}/{{ site.git.repo }}/blob/master/LICENSE"><img class="badge" src="{{site.badges}}/npm/l/{{ site.git.repo }}.svg?style=flat-square" alt="License"/></a>
-      </p>
-    {{/if}}
+    {{>badges}}
   </div>
 </footer>

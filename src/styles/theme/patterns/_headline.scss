@@ -9,6 +9,7 @@
       padding-top: 0,
       position: relative,
       font-size: 50px,
+      line-height: 1.4,
       // add a nifty separator bar
       '&::after': (
         width: 100%,
@@ -17,11 +18,23 @@
         background-color: palette(brand),
         content: "",
         margin-top: -18px,
-        margin-bototm: 20px
+        position: absolute // to ensure it sits atop other content
       )
     ),
+    medium: (
+      font-size: 36px
+    ),
+    small: (
+      font-size: 28px
+    ),
+    extra small: (
+      font-size: 22px
+    ),
+    tiny: (
+      font-size: 16px
+    ),
 
-    full-width: (
+    full-width large: (
       '&::after': (
         margin-left: calc((100% - 100vw) / 2),
         width: calc(100vw)

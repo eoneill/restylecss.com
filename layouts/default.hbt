@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-  {{> head}}
+  {{> head stylesheets='default'}}
 </head>
 <body class="{{ page.class }}{{inline-if page.aside '' ' full-width'}}" id="{{ page.id }}">
   {{> header title=page.title}}

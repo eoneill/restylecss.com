@@ -1,7 +1,7 @@
 $-theme-font-family: (
   sans-serif: (Open Sans, Helvetica Neue Light, Helvetica Neue, Arial, sans-serif),
   serif: (Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif),
-  monospace: (Courier New, DejaVu Sans Mono, Bitstream Vera Sans Mono, Monaco, monospace)
+  monospace: (Courier, Menlo, DejaVu Sans Mono, Bitstream Vera Sans Mono, Monaco, monospace)
 );
 
 @function font-family($types...) {

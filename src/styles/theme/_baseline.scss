@@ -1,19 +1,24 @@
 @import "./core";
 
+/*!
+ * heavily inspired by Barebones foundation:
+ *  @link https://github.com/jaydenseric/Barebones
+ *  @author Jayden Seric
+ */
+
 //------------------------------------------------ Foundation
 
 // Reference: http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation
 
 html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
 }
 body {
   margin: 0;
-  font: 16px/1 font-family(sans-serif);
+  font: 16px/1 sans-serif;
 }
 iframe {
   border: 0;
@@ -68,7 +73,7 @@ button {
   letter-spacing: inherit;
   background: none;
   cursor: pointer;
-  -webkit-font-smoothing: inherit;
+  font-smoothing: inherit;
   &:focus {
     outline: 0;
   }

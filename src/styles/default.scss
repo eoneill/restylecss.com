@@ -99,3 +99,13 @@ $sidebar-width: 240px;
 #global-sidebar + #global-main {
   flex: 0 0 calc(100% - #{$sidebar-width});
 }
+
+
+code {
+  @include restyle(code);
+  pre & {
+    @include restyle(block code);
+  }
+}
+
+@import "../../node_modules/highlight.js/styles/tomorrow-night.css";

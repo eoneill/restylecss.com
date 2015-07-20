@@ -16,7 +16,7 @@ var config = {
     title: "reSTYLE - an eyeglass module",
     description: "TODO",
     tagline: "TODO",
-    styles: ["main.css"],
+    styles: ["default.css"],
     copyright: {
       holder: "LinkedIn Corporation",
       year: new Date().getFullYear()
@@ -26,7 +26,7 @@ var config = {
       account: "eoneill",
       repo: "eyeglass-restyle"
     },
-    badges: "https://img.shields.io"
+    badges: "//img.shields.io"
   },
   livereload: {
     host: "localhost:35729"
@@ -36,7 +36,7 @@ var config = {
   environment: {
     production: {
       site: {
-        url: "http://www.restylecss.com"
+        url: "//www.restylecss.com"
       },
       isProduction: true,
       livereload: false

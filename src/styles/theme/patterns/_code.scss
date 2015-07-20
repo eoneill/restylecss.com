@@ -1,0 +1,19 @@
+@include restyle-define(code, (
+  font-family: font-family(monospace),
+  background-color: palette(gray, light),
+  color: color(gray, darkest),//palette(accent, purple),
+  border-radius: 4px,
+  padding: 3px,
+
+  '@restyle.modifiers': (
+    block: (
+      background-color: palette(gray, dark),
+      color: palette(gray, medium-light),
+      padding: 20px,
+      border-radius: 5px,
+      display: block,
+      border-left: 5px solid palette(accent, purple),
+      font-weight: normal
+    )
+  )
+));

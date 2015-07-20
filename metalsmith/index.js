@@ -1,5 +1,6 @@
 var Metalsmith = require("metalsmith");
 var Handlebars = require("handlebars");
+var path = require("path");
 
 function debug(files, metalsmith, done) {
   console.log("[metalsmith]", files);
@@ -50,7 +51,7 @@ module.exports = function(rootDir) {
       pattern: ":collection/:title",
       relative: true
     }))
-    .use(plugins.pagedata())
+    .use(plugins.pagedata(config))
     // use handlebars on content
     .use(plugins.inPlace({
       engine: "handlebars",

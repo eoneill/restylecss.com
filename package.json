@@ -13,7 +13,7 @@
   "author": "Robin Thrift <thrift.d.robin@googlemail.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "eyeglass-restyle": "^0.1.4"
+    "eyeglass-restyle": "^0.1.5"
   },
   "devDependencies": {
     "camelcase": "^1.1.0",

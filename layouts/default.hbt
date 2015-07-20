@@ -3,7 +3,7 @@
 <head>
   {{> head}}
 </head>
-<body class="{{ page.class }}" id="{{ page.id }}">
+<body class="{{ page.class }}{{inline-if page.aside '' ' full-width'}}" id="{{ page.id }}">
   {{> header title=page.title}}
 
   <div id="global-container">

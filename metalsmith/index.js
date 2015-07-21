@@ -63,7 +63,7 @@ module.exports = function(rootDir) {
       engine: "handlebars"
     }))
     .use(plugins.eyeglass({
-      outputStyle: config.isProduction ? "compressed" : "expanded",
+      outputStyle: config.isProd ? "compressed" : "expanded",
       root: rootDir,
       buildDir: "${source}/assets/",
       assetsHttpPrefix: "assets"

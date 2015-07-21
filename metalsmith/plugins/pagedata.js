@@ -10,8 +10,6 @@ module.exports = function(config) {
       if (typeof data.path === "string") {
         // add an ID if it doesn't exist
         data.id = data.id || ((data.path || "index").replace(/[^a-z0-9_-]/gi, "--"));
-
-        data.permapath = ((config.site && config.site.url) || "") + "/" + data.path;
       }
 
       // expose everything on a `page` sub node

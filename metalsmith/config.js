@@ -34,14 +34,14 @@ var config = {
   livereload: {
     host: "localhost:35729"
   },
-  isProduction: false,
+  isProd: false,
 
   environment: {
     production: {
       site: {
         url: "//www.restylecss.com"
       },
-      isProduction: true,
+      isProd: true,
       livereload: false
     }
   }
@@ -49,6 +49,7 @@ var config = {
 
 if (argv.environment) {
   config = merge(config, (config.environment && config.environment[argv.environment]) || {});
+  config.isDev = !config.isProd;
 }
 
 module.exports = merge(config, {

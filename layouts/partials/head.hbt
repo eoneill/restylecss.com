@@ -7,9 +7,9 @@
 {{>stylesheets styles=template-styles}}
 {{>stylesheets styles=page.styles}}
 
-{{#if page.permapath}}
-  <link rel="canonical" href="{{ page.permapath }}"/>
-  <meta property="og:url" content="{{ page.permapath }}"/>
+{{#if page.path}}
+  <link rel="canonical" href="{{link page.path }}"/>
+  <meta property="og:url" content="{{link page.path }}"/>
 {{/if}}
 
 <meta property="og:site_name" content="{{ site.title }}"/>

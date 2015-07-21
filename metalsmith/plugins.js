@@ -27,7 +27,7 @@ module.exports = function(config) {
   }
 
   // if it's not prod mode
-  if (!config.isProduction) {
+  if (!config.isProd) {
     // disable minifiers
     plugins.htmlMinifier = noop;
     plugins.uglify = noop;

@@ -1,3 +1,4 @@
+{{!-- TODO --}}
 {{#if collections}}
   <aside id="global-sidebar">
     <h2>Configuration</h2>

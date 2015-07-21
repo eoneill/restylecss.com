@@ -10,7 +10,7 @@ aside: true
 
 This is some normal text. Bacon ipsum dolor amet biltong pastrami t-bone pork loin tenderloin sausage short loin boudin frankfurter tail pancetta meatball beef ribs rump. Hamburger pork chop cupim, strip steak jowl pastrami spare ribs shank landjaeger meatloaf cow turkey.
 
-Ground round frankfurter jowl pastrami strip steak turkey landjaeger drumstick kielbasa swine jerky chuck meatball. Pork chop andouille beef ribs pig, picanha turducken beef chuck doner corned beef hamburger ribeye filet mignon pork belly tail. Porchetta corned beef turducken venison leberkas.
+[excerpt]Ground round frankfurter jowl pastrami strip steak turkey landjaeger drumstick kielbasa swine jerky chuck meatball.[/excerpt] Pork chop andouille beef ribs pig, picanha turducken beef chuck doner corned beef hamburger ribeye filet mignon pork belly tail. Porchetta corned beef turducken venison leberkas.
 
 ### Links
 

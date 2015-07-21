@@ -9,8 +9,11 @@ module.exports = function(options) {
   // merge in the options
   options = merge({
     pattern: "**/*.html",
+    shortCode: /(\[excerpt\])(.*)(\[\/excerpt\])/mi,
     truncate: 150,
+    forceTruncate: false,
     wordBreak: false,
+    tags: "p",
     ellipsis: "…"
   }, options);
 
@@ -20,7 +23,10 @@ module.exports = function(options) {
       var contents;
       var excerpt;
       var fullExcerpt;
+      var fullText;
       var $;
+      var matchText;
+      var doNotTruncate;
 
       // if the file pattern matches...
       if (minimatch(file, options.pattern)) {
@@ -28,9 +34,27 @@ module.exports = function(options) {
         if (contents) {
           // get the contents as plain text
           $ = cheerio.load(contents);
-          excerpt = fullExcerpt = $("p:not(:empty)").first().text();
+          fullText = $(options.tags).text() || $("*").text();
 
-          if (options.truncate && fullExcerpt.length > options.truncate) {
+          // if the excerpt short codes are used, extract from that
+          if (options.shortCode && options.shortCode.test(fullText)) {
+            matchText = fullText.match(options.shortCode);
+            console.log("shortCode matches", matchText);
+            fullExcerpt = matchText[2];
+            if (fullExcerpt) {
+              // whether or not to truncate the excerpt
+              doNotTruncate = !options.forceTruncate;
+              // remove the excerpt short codes
+              contents = contents.replace(matchText[1], "").replace(matchText[3], "");
+              // set the updated content
+              data.contents = new Buffer(contents);
+            }
+          }
+
+          // if we don't already have the excerpt from the short code, find it from the first non-empty node
+          excerpt = fullExcerpt = fullExcerpt || $(options.tags.replace(/(?:,|$)/g, ":not(:empty)")).first().text();
+
+          if (!doNotTruncate && options.truncate && fullExcerpt.length > options.truncate) {
             // truncate it
             excerpt = excerpt.substring(0, options.truncate);
             // if we're not supposed to break on words...

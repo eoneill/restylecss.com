@@ -26,6 +26,9 @@ var config = {
       account: "eoneill",
       repo: "eyeglass-restyle"
     },
+    package: {
+      name: "eyeglass-restyle"
+    },
     badges: "//img.shields.io"
   },
   livereload: {

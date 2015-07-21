@@ -2,8 +2,8 @@
 
 module.exports = function(Handlebars, config) {
   Handlebars.registerHelper("url", function(path) {
-    return path.replace(/\{git\.(repo|account)\}/g, function(match, key) {
-      return config.site.git[key];
+    return path.replace(/\{(git|package)\.(repo|account|name)\}/g, function(match, type, key) {
+      return config.site[type][key];
     });
   });
 };

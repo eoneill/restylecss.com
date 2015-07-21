@@ -6,7 +6,7 @@ module.exports = function(Handlebars, config) {
       path += "/" + config.site.git.account + "/" + config.site.git.repo;
     }
     else if (/npm/.test(path)) {
-      path += "/" + config.site.git.repo;
+      path += "/" + config.site.package.name;
     }
 
     return config.site.badges + "/" + path + ".svg?style=flat-square";

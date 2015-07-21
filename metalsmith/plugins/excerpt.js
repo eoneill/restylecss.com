@@ -39,7 +39,6 @@ module.exports = function(options) {
           // if the excerpt short codes are used, extract from that
           if (options.shortCode && options.shortCode.test(fullText)) {
             matchText = fullText.match(options.shortCode);
-            console.log("shortCode matches", matchText);
             fullExcerpt = matchText[2];
             if (fullExcerpt) {
               // whether or not to truncate the excerpt

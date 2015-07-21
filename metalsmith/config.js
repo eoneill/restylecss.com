@@ -36,7 +36,7 @@ var config = {
   },
   isProd: false,
 
-  environment: {
+  environments: {
     production: {
       site: {
         url: "//www.restylecss.com"
@@ -48,9 +48,12 @@ var config = {
 };
 
 if (argv.environment) {
-  config = merge(config, (config.environment && config.environment[argv.environment]) || {});
-  config.isDev = !config.isProd;
+  config = merge(config, (config.environments && config.environments[argv.environment]) || {});
 }
+
+config.isDev = !config.isProd;
+
+config.isServer = config.isServer || (argv && argv.server);
 
 module.exports = merge(config, {
   argv: argv

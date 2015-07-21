@@ -7,6 +7,10 @@ function debug(files, metalsmith, done) {
   done();
 }
 
+function noop(files, metalsmith, done) {
+  done();
+}
+
 module.exports = function(rootDir) {
   var config = require("./config");
   var plugins = require("./plugins")(config);
@@ -16,16 +20,16 @@ module.exports = function(rootDir) {
   new Metalsmith(rootDir)
     .metadata(config)
     .use(plugins.filter())
-    .use(plugins.drafts())
-    .use(plugins.watch({
+    .use(config.isProd && plugins.drafts() || noop)
+    .use(config.isServer && plugins.watch({
       paths: {
         // TODO - this isn't really working right, need to adjust the patterns
         "${source}/**/*": true,
         "${source}/styles/**/*": "**/*",
         "layouts/**/*": "**/*",
       },
-      livereload: true
-    }))
+      livereload: !!config.livereload
+    }) || noop)
     .use(plugins.collections({
       posts: {
         pattern: "content/posts/*.md",
@@ -69,10 +73,10 @@ module.exports = function(rootDir) {
       assetsHttpPrefix: "assets"
     }))
     .use(plugins.autoprefixer())
-    .use(plugins.htmlMinifier())
-    .use(plugins.uglify())
-    .use(plugins.serve())
-    .destination("./dist")
+    .use(config.isProd && plugins.htmlMinifier() || noop)
+    .use(config.isProd && plugins.uglify() || noop)
+    .use(config.isServer && plugins.serve() || noop)
+    .destination(config.destination || "./restylecss.com")
     .build(function(err) {
       if (err) { throw err; }
     });

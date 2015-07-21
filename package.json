@@ -30,7 +30,6 @@
     "metalsmith-build-date": "^0.1.0",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-drafts": "0.0.1",
-    "metalsmith-excerpts": "^1.0.0",
     "metalsmith-html-minifier": "^1.1.0",
     "metalsmith-in-place": "^1.0.1",
     "metalsmith-layouts": "^1.0.1",
@@ -43,6 +42,7 @@
     "metalsmith-templates": "^0.7.0",
     "metalsmith-uglify": "^1.0.1",
     "metalsmith-watch": "^1.0.1",
+    "minimatch": "^2.0.9",
     "minimist": "^1.1.1",
     "moment": "^2.10.3",
     "node-sass": "^3.2.0"

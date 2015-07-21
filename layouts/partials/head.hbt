@@ -13,16 +13,16 @@
 {{/if}}
 
 <meta property="og:site_name" content="{{ site.title }}"/>
-<meta property="og:title" content="{{or page.title site.title}}"/>
-<meta property="og:type" content="{{or page.meta.type 'article'}}"/>
+<meta property="og:title" content="{{#if page.title}}{{ page.title }} | {{/if}}{{ site.title }}"/>
+<meta property="og:type" content="{{#if page.title}}{{ page.title }} | {{/if}}{{ site.title }}"/>
 
 {{#if (or page.meta.image site.meta.image)}}
   <meta property="og:image" content="{{or page.meta.image site.meta.image}}"/>
 {{/if}}
 
-{{#if (or page.description site.description)}}
-  <meta property="og:description" content="{{or page.description site.description}}"/>
-  <meta name="description" content="{{or page.description site.description}}"/>
+{{#if (or page.description (or page.excerpt site.description))}}
+  <meta property="og:description" content="{{or page.description (or page.excerpt site.description)}}"/>
+  <meta name="description" content="{{or page.description (or page.excerpt site.description)}}"/>
 {{/if}}
 
 {{>livereload}}

@@ -37,7 +37,6 @@ module.exports = function(rootDir) {
       perPage: 10,
       path: ":collection/page"
     }))
-    .use(plugins.excerpts())
     .use(plugins.markdown({
       gfm: true,
       tables: true,
@@ -57,6 +56,8 @@ module.exports = function(rootDir) {
       engine: "handlebars",
       pattern: "**/*.{md,html}"
     }))
+    // extract excerpts right before we do the layouts
+    .use(plugins.excerpt())
     // use handlebars templates
     .use(plugins.layouts({
       engine: "handlebars"

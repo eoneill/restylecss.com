@@ -1,8 +1,6 @@
 <footer id="global-footer">
   <div>
-    <p class="copyright">
-      {{ site.copyright.holder }} &copy; {{ site.copyright.year }}
-    </p>
+    {{>copyright}}
 
     {{>badges}}
   </div>

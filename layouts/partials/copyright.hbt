@@ -1,0 +1,5 @@
+{{#if site.copyright}}
+  <p class="copyright">
+    {{ site.copyright.holder }} &copy; {{ site.copyright.year }}
+  </p>
+{{/if}}

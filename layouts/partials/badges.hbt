@@ -1,12 +1,12 @@
 {{#if site.badges}}
   {{#if site.git}}
     <p class="badges">
-      {{>badge text='Forks on GitHub' href=(github-project 'fork') src=(badge-url 'github/forks')}}
-      {{>badge text='Stars on GitHub' href=(github-project '') src=(badge-url 'github/stars')}}
-      {{>badge text='Issues on GitHub' href=(github-project 'issues') src=(badge-url 'github/issues-raw')}}
+      {{>badge text='Forks on GitHub' href=(github-repo 'fork') src=(badge-url 'github/forks')}}
+      {{>badge text='Stars on GitHub' href=(github-repo '') src=(badge-url 'github/stars')}}
+      {{>badge text='Issues on GitHub' href=(github-repo 'issues') src=(badge-url 'github/issues-raw')}}
       {{>badge text='Build Status' href='https://travis-ci.org/{git.account}/{git.repo}' src=(badge-url 'travis')}}
-      {{>badge text='Version' href='//www.npmjs.com/package/{package.name}' src=(badge-url 'npm/v')}}
-      {{>badge text='License' href=(github-project 'blob/master/LICENSE') src=(badge-url 'npm/l')}}
+      {{>badge text='Version' href='https://www.npmjs.com/package/{package.name}' src=(badge-url 'npm/v')}}
+      {{>badge text='License' href=(github-repo 'blob/master/LICENSE') src=(badge-url 'npm/l')}}
     </p>
   {{/if}}
 {{/if}}

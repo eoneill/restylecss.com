@@ -11,5 +11,20 @@
     visited: (
       color: palette(accent, purple)
     )
+  ),
+
+  '@restyle.modifiers': (
+    in footer: (
+      color: palette(gray, light),
+      '@restyle.states': (
+        hover: (
+          color: palette(gray, medium-light),
+          text-decoration: none
+        ),
+        visited: (
+          color: inherit
+        )
+      )
+    )
   )
 ));

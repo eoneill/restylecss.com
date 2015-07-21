@@ -42,6 +42,7 @@ body {
       font: 0/0 a;
       color: transparent;
       img {
+        @include restyle(small copy in the global footer, anchor in the global footer);
         vertical-align: middle;
       }
     }

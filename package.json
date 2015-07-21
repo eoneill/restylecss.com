@@ -1,22 +1,24 @@
 {
   "name": "restylecss.com",
   "version": "0.0.0",
-  "description": "My Personal Blog.",
+  "description": "TODO",
   "main": "index.js",
   "scripts": {
     "build": "node index.js",
+    "serve": "node index.js --server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "http://robinthrift.com",
-  "issues": "https://github.com/RobinThrift/RobinThrift.com/issues",
-  "repository": "https://github.com/RobinThrift/RobinThrift.com.git",
-  "author": "Robin Thrift <thrift.d.robin@googlemail.com>",
+  "homepage": "http://restylecss.com",
+  "issues": "https://github.com/eoneill/restylecsscom/issues",
+  "repository": "https://github.com/eoneill/restylecsscom.git",
+  "author": "Eugene ONeill <oneill.eugene@gmail.com>",
   "license": "Apache-2.0",
   "dependencies": {
     "eyeglass-restyle": "^0.1.5"
   },
   "devDependencies": {
     "camelcase": "^1.1.0",
+    "cheerio": "^0.19.0",
     "eyeglass": "^0.3.0",
     "glob": "^5.0.14",
     "gulp": "^3.9.0",

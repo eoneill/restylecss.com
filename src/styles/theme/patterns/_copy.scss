@@ -2,5 +2,15 @@
   color: palette(gray, medium-dark),
   font-size: 18px,
   line-height: 1.5,
-  font-family: font-family(sans-serif)
+  font-family: font-family(sans-serif),
+
+  '@restyle.modifiers': (
+    in footer: (
+      color: palette(gray, lightest),
+      font-size: 16px
+    ),
+    small in footer: (
+      font-size: 14px
+    )
+  )
 ));

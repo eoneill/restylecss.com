@@ -35,6 +35,18 @@ module.exports = function(rootDir) {
         pattern: "content/posts/*.md",
         sortBy: "date",
         reverse: true
+      },
+      tutorials: {
+        pattern: "content/tutorials/*.md",
+        sortBy: "weight"
+      },
+      documentation: {
+        pattern: "content/documentation/*.md",
+        sortBy: "weight"
+      },
+      examples: {
+        pattern: "content/examples/*.md",
+        sortBy: "title"
       }
     }))
     .use(plugins.paginate({
@@ -50,11 +62,13 @@ module.exports = function(rootDir) {
         return require("highlight.js").highlightAuto(code).value;
       }
     }))
+    .use(plugins.permalinksInfo())
     .use(plugins.permalinks({
-      pattern: ":collection/:title",
-      relative: true
+      pattern: ":collection/:permaname",
+      relative: false
     }))
     .use(plugins.pagedata(config))
+    .use(plugins.aside(config))
     // use handlebars on content
     .use(plugins.inPlace({
       engine: "handlebars",

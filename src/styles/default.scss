@@ -10,6 +10,7 @@ body {
 #global-header {
   @include restyle(global header);
   padding: 20px;
+  position: relative;
   .brand {
     @include restyle(logo) {
       vertical-align: middle;
@@ -21,6 +22,42 @@ body {
       display: inline-block;
       vertical-align: middle;
       margin-left: 10px;
+    };
+  }
+}
+
+#global-nav {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  li {
+    float: left;
+    margin-right: 20px;
+    position: relative;
+    &::after {
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      content: "";
+      height: 0;
+      margin-right: -8px;
+      position: absolute;
+      right: 50%;
+      width: 0;
+      display: block;
+      bottom: -10px;
+      transition: ease-in-out 0.2s;
+    }
+    &:hover,
+    &.current {
+      &::after {
+        border-bottom: 8px solid palette(canvas);
+      }
+    }
+  }
+  a {
+    @include restyle(anchor in the global nav) {
+      position: relative;
+      bottom: -7px;
     };
   }
 }

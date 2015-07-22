@@ -4,12 +4,12 @@
   color: palette(brand),
 
   '@restyle.states': (
+    visited: (
+      color: palette(accent, purple)
+    ),
     hover: (
       color: palette(accent, blue),
       text-decoration: underline
-    ),
-    visited: (
-      color: palette(accent, purple)
     )
   ),
 
@@ -17,12 +17,25 @@
     in footer: (
       color: palette(gray, light),
       '@restyle.states': (
+        visited: (
+          color: inherit
+        ),
         hover: (
           color: palette(gray, medium-light),
           text-decoration: none
-        ),
+        )
+      )
+    ),
+
+    in nav: (
+      '@restyle': extra-small headline,
+      line-height: 1,
+      '@restyle.states': (
         visited: (
-          color: inherit
+          color: '@root.color'
+        ),
+        hover: (
+          text-decoration: none
         )
       )
     )

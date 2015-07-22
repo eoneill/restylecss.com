@@ -29,7 +29,28 @@ var config = {
     package: {
       name: "eyeglass-restyle"
     },
-    badges: "//img.shields.io"
+    badges: "//img.shields.io",
+    nav: [
+      {
+        href: "documentation",
+        title: "Docs",
+        description: "Read the docs!"
+      },
+      {
+        href: "https://github.com/{git.account}/{git.repo}",
+        title: "GitHub",
+        description: "View the source on GitHub",
+        target: "_blank"
+      },
+      {
+        href: "examples",
+        title: "Examples"
+      },
+      {
+        href: "tutorials",
+        title: "Tutorials"
+      }
+    ]
   },
   livereload: {
     host: "localhost:35729"

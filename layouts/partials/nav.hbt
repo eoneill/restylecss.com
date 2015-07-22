@@ -1,0 +1,7 @@
+<nav id="{{id}}" class="{{class}}">
+  <ul>
+    {{#each nav as |item|}}
+      <li class="{{item.type}}{{#if (child-of ../current item.href)}}current{{/if}}"><a href="{{link item.href}}" target="{{item.target}}" title="{{item.description}}">{{item.title}}</a></li>
+    {{/each}}
+  </ul>
+</nav>

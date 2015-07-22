@@ -3,8 +3,9 @@
 <head>
   {{> head stylesheets='default'}}
 </head>
-<body class="{{ page.class }}{{inline-if page.aside '' ' full-width'}}" id="{{ page.id }}">
-  {{> header title=page.title}}
+
+<body class="{{ page.class }}{{inline-if page.aside '' ' full-width'}}" id="pageid_{{ page.id }}">
+  {{> header title=page.title nav=site.nav}}
 
   <div id="global-container">
     {{>sidebar collections=page.aside}}

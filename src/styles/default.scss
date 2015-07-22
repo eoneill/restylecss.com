@@ -76,12 +76,8 @@ body {
     display: inline-block;
     float: right;
     .badge {
-      font: 0/0 a;
-      color: transparent;
-      img {
-        @include restyle(small copy in the global footer, anchor in the global footer);
-        vertical-align: middle;
-      }
+      @include restyle(small copy in the global footer, anchor in the global footer);
+      vertical-align: middle;
     }
   }
 }
@@ -154,37 +150,40 @@ $sidebar-width: 240px;
     @include restyle(anchor);
   }
 
-  .page-tags .tag {
-    display: inline-block;
-    a {
-      @include restyle(tag);
+  code {
+    @include restyle(code);
+    pre & {
+      @include restyle(block code);
+    }
+
+    h1 &,
+    h2 &,
+    h3 &,
+    h4 &,
+    h5 &,
+    h6 & {
+      @include restyle(code in a headline);
+    }
+  }
+
+  blockquote {
+    @include restyle(blockquote);
+  }
+
+  // tags
+  .page-tags {
+    .tag {
+      display: inline-block;
+      a {
+        @include restyle(tag);
+      }
     }
   }
 }
 
+// when we have a sidebar and a main, calculate the new width
 #global-sidebar + #global-main {
   flex: 0 0 calc(100% - #{$sidebar-width});
-}
-
-
-code {
-  @include restyle(code);
-  pre & {
-    @include restyle(block code);
-  }
-
-  h1 &,
-  h2 &,
-  h3 &,
-  h4 &,
-  h5 &,
-  h6 & {
-    @include restyle(code in a headline);
-  }
-}
-
-blockquote {
-  @include restyle(blockquote);
 }
 
 @import "../../node_modules/highlight.js/styles/tomorrow-night.css";

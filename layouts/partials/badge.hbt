@@ -1,1 +1,1 @@
-<a href="{{link href}}" class="badge" target="_blank">{{text}}<img src="{{link src}}" alt="{{text}}"/></a>
+<a href="{{link href}}" target="_blank"><img src="{{link src}}" class="badge" alt="{{text}}"/></a>

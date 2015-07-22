@@ -14,7 +14,6 @@
       <div id="global-content">
         <h2>&ldquo;{{page.tag}}&rdquo; topics</h2>
         {{#with (lookup this.alltags page.tag)}}
-          {{debug this}}
 
           {{#each this as |tagged|}}
             <article class="topic">

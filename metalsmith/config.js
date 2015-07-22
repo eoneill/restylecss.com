@@ -19,7 +19,8 @@ var config = {
     styles: ["default.css"],
     copyright: {
       holder: "LinkedIn Corporation",
-      year: new Date().getFullYear()
+      year: new Date().getFullYear(),
+      website: "http://engineering.linkedin.com"
     },
     url: "",
     git: {

@@ -2,22 +2,12 @@
 {{#if collections}}
   <aside id="global-sidebar">
     {{#each page.aside as |collection|}}
-      {{!-- do topics first --}}
       {{#each collection.topics as |topic|}}
-        {{#if topic.title}}
-          <h2>{{topic.title}}</h2>
-        {{/if}}
+        <h2>{{or topic.title collection.title}}</h2>
         {{#each topic as |item|}}
-          <a href="{{link item.shortpath}}">{{or item.shorttitle item.title}}</a>
+          <a href="{{link item.shortpath}}" class="{{#equal item.shortpath ../../../page.shortpath}}active{{/equal}}">{{or item.shorttitle item.title}}</a>
         {{/each}}
       {{/each}}
-      {{!-- then do the generic items --}}
-      {{#if collection.items}}
-        <h2>{{collection.title}}</h2>
-        {{#each collection.items as |item|}}
-          <a href="{{link item.shortpath}}" title="{{inline-if item.shorttitle item.title ''}}">{{or item.shorttitle item.title}}</a>
-        {{/each}}
-      {{/if}}
     {{/each}}
   </aside>
 {{/if}}

@@ -145,12 +145,20 @@ $sidebar-width: 240px;
     @include restyle(tiny headline);
   }
 
-  > p {
+  > p,
+  > article {
     margin: 20px 0;
   }
 
   a {
     @include restyle(anchor);
+  }
+
+  .page-tags .tag {
+    display: inline-block;
+    a {
+      @include restyle(tag);
+    }
   }
 }
 

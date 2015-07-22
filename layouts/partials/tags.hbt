@@ -1,0 +1,11 @@
+{{#if tags}}
+  {{#if tagpages}}
+    <ul class="page-tags">
+      {{#each tags as |tag|}}
+        {{#with (lookup ../this.tagpages tag)}}
+          <li class="tag"><a href="{{link this.path}}">{{../this}}</a></li>
+        {{/with}}
+      {{/each}}
+    </ul>
+  {{/if}}
+{{/if}}

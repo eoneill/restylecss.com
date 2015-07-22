@@ -6,7 +6,9 @@ var minimatch = require("minimatch");
 module.exports = function(config) {
 
   return function(files, metalsmith, done) {
-    var collections = {};
+
+    var collections = metalsmith._metadata.collections;
+    var topics = {};
     var filesNext = [];
 
     Object.keys(files).forEach(function(file) {
@@ -20,52 +22,34 @@ module.exports = function(config) {
 
         if (aside) {
           filesNext.push(file);
-          if (aside !== "all") {
-            aside = [].concat(aside);
-            if (!data.isIndex) {
-              aside.forEach(function(collection) {
-                collection = collections[collection] = collections[collection] || [];
-                if (data.topic) {
-                  collection.topics = collection.topics || {};
-                  collection.topics[data.topic] = collection.topics[data.topic] || [];
-                  collection.topics[data.topic].push(data);
-                  collection.topics[data.topic].title = data.topic;
-                }
-                else {
-                  collection.push(data);
-                }
-              });
-            }
+          aside = [].concat(aside);
+          if (!data.isIndex) {
+            aside.forEach(function(collection) {
+              var topic = data.topic;
+              collection = topics[collection] = topics[collection] || {};
+              collection[topic] = collection[topic] || [];
+              collection[topic].push(data);
+              collection[topic].title = topic;
+            });
           }
-        }
-        else {
-          aside = false;
         }
         data.aside = aside;
       }
     });
 
-    console.log("got files to process", filesNext);
-
     filesNext.forEach(function(file) {
       var data = files[file];
 
-      console.log("before...", file, data.aside);
-
       data.aside = data.aside.map(function(collection) {
         return {
-          collection: collection,
           title: config.site.collections && config.site.collections[collection] || collection,
-          items: collections[collection],
-          topics: collections[collection].topics
+          topics: topics[collection]
         };
       });
 
       if (data.page) {
         data.page.aside = data.aside;
       }
-
-      console.log("after...", file, data.aside);
     });
 
     done();

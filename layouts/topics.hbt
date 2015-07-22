@@ -5,16 +5,20 @@
 </head>
 
 <body class="{{ page.class }}{{inline-if page.aside '' ' full-width'}}" id="pageid_{{ page.id }}">
-  {{> header title=page.title nav=site.nav}}
+  {{> header title=page.tag nav=site.nav}}
 
   <div id="global-container">
     {{>sidebar collections=page.aside}}
 
     <main id="global-main">
       <div id="global-content">
-        {{{ contents }}}
 
-        {{>tags tags=page.tags tagpages=this.tagpages}}
+        <h2>Topics</h2>
+
+        {{#each this.tagpages as |page|}}
+          <h3><a href="{{link page.path}}">{{@key}}</a></h3>
+        {{/each}}
+
       </div>
     </main>
   </div>

@@ -42,6 +42,7 @@
     "metalsmith-sass": "^1.2.1",
     "metalsmith-serve": "0.0.3",
     "metalsmith-tags": "^0.10.1",
+    "metalsmith-tags-list": "^0.1.0",
     "metalsmith-templates": "^0.7.0",
     "metalsmith-uglify": "^1.0.1",
     "metalsmith-watch": "^1.0.1",

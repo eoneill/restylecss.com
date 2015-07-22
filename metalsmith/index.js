@@ -3,7 +3,8 @@ var Handlebars = require("handlebars");
 var path = require("path");
 
 function debug(files, metalsmith, done) {
-  console.log("[metalsmith]", files);
+  console.log("[metalsmith:files]", files);
+  console.log("[metalsmith:metalsmith]", metalsmith);
   done();
 }
 
@@ -49,10 +50,6 @@ module.exports = function(rootDir) {
         sortBy: "title"
       }
     }))
-    .use(plugins.paginate({
-      perPage: 10,
-      path: ":collection/page"
-    }))
     .use(plugins.markdown({
       gfm: true,
       tables: true,
@@ -62,6 +59,14 @@ module.exports = function(rootDir) {
         return require("highlight.js").highlightAuto(code).value;
       }
     }))
+    .use(plugins.tags({
+      handle: "tags",
+      //metadataKey: "alltags",
+      path: "topics/:tag.html",
+      // template to use for tag listing
+      template: "topic.hbt"
+    }))
+    .use(plugins.templateToLayout())
     .use(plugins.permalinksInfo())
     .use(plugins.permalinks({
       pattern: ":collection/:permaname",
@@ -76,6 +81,7 @@ module.exports = function(rootDir) {
     }))
     // extract excerpts right before we do the layouts
     .use(plugins.excerpt())
+    .use(plugins.tagdata())
     // use handlebars templates
     .use(plugins.layouts({
       engine: "handlebars"

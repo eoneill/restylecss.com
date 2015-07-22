@@ -1,0 +1,11 @@
+@include restyle-define(tag, (
+  '@restyle': tiny compact copy,
+  background-color: palette(gray, lighter),
+  color: palette(gray, medium),
+  padding: 2px 8px,
+  border: 1px solid palette(gray, light),
+  border-radius: 10px,
+  display: inline-block,
+  text-decoration: none,
+  text-transform: lowercase
+));

@@ -29,7 +29,7 @@ var config = {
       repo: "eyeglass-restyle"
     },
     package: {
-      name: pkg.name
+      name: "eyeglass-restyle"
     },
     badges: "//img.shields.io",
     nav: [
@@ -63,6 +63,13 @@ var config = {
     production: {
       site: {
         url: "//www.restylecss.com"
+      },
+      isProd: true,
+      livereload: false
+    },
+    staging: {
+      site: {
+        url: ""
       },
       isProd: true,
       livereload: false

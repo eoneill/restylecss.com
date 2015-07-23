@@ -15,38 +15,38 @@ function noop(files, metalsmith, done) {
 module.exports = function(rootDir) {
   var config = require("./config");
   var plugins = require("./plugins")(config);
-  var helpers = require("./helpers")(Handlebars, config);
-  var partials = require("./partials")(Handlebars);
 
   new Metalsmith(rootDir)
     .metadata(config)
-    .use(plugins.filter())
-    .use(config.isProd && plugins.drafts() || noop)
     .use(config.isServer && plugins.watch({
       paths: {
         // TODO - this isn't really working right, need to adjust the patterns
-        "${source}/**/*": true,
-        "${source}/styles/**/*": "**/*",
-        "layouts/**/*": "**/*",
+        "${source}/content/**/*.md": true,
+        "${source}/**/*.html": true,
+        "${source}/{styles,images}/**/*": "**/*",
+        "layouts/**/*": "**/*"
       },
       livereload: !!config.livereload
     }) || noop)
+    .use(plugins.configureHandlebars(Handlebars, config))
+    .use(plugins.filter())
+    .use(config.isProd && plugins.drafts() || noop)
     .use(plugins.collections({
       posts: {
-        pattern: "content/posts/*.md",
+        pattern: "content/posts/**/*.md",
         sortBy: "date",
         reverse: true
       },
       tutorials: {
-        pattern: "content/tutorials/*.md",
+        pattern: "content/tutorials/**/*.md",
         sortBy: "weight"
       },
       documentation: {
-        pattern: "content/documentation/*.md",
+        pattern: "content/documentation/**/*.md",
         sortBy: "weight"
       },
       examples: {
-        pattern: "content/examples/*.md",
+        pattern: "content/examples/**/*.md",
         sortBy: "title"
       }
     }))

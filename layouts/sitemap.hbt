@@ -3,7 +3,7 @@
   {{#each collections as |collection|}}
     {{#each collection as |page|}}
       <url>
-        <loc>{{link page.path }}</loc>
+        <loc>{{link page.path protocol='http'}}</loc>
         {{#if (or page.lastmod page.date)}}
           <lastmod>{{sitemapdate (or page.lastmod page.date)}}</lastmod>
         {{/if}}

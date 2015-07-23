@@ -14,7 +14,7 @@ var config = {
   site: {
     themeColor: "#0077b5",
     title: "reSTYLE - an eyeglass module",
-    description: "TODO",
+    description: pkg.description,
     tagline: "TODO",
     styles: ["default.css"],
     copyright: {
@@ -22,13 +22,14 @@ var config = {
       year: new Date().getFullYear(),
       website: "http://engineering.linkedin.com"
     },
+    feed: ["examples"],
     url: "",
     git: {
       account: "eoneill",
       repo: "eyeglass-restyle"
     },
     package: {
-      name: "eyeglass-restyle"
+      name: pkg.name
     },
     badges: "//img.shields.io",
     nav: [

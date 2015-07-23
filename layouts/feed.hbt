@@ -7,14 +7,17 @@
 
     <atom:link href="{{link 'feed.xml'}}" rel="self" type="application/rss+xml" />
 
-    {{#each collections.posts as |page|}}
-      <item>
-        <title>{{ page.title }}</title>
-        {{#if page.excerpt}}<description>{{ page.excerpt }}</description>{{/if}}
-        <pubDate>{{xmldate page.date }}</pubDate>
-        <link>{{link page.path }}</link>
-        <guid isPermaLink="true">{{link page.path }}</guid>
-      </item>
+    {{#each site.feed as |feed|}}
+      {{#each (lookup ../collections feed) as |page|}}
+        <item>
+          <title>{{ page.title }}</title>
+          {{#if page.excerpt}}<description>{{ page.excerpt }}</description>{{/if}}
+          <pubDate>{{xmldate page.date }}</pubDate>
+          <link>{{link page.path }}</link>
+          <guid isPermaLink="true">{{link page.path }}</guid>
+        </item>
+      {{/each}}
     {{/each}}
+
   </channel>
 </rss>

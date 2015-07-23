@@ -4,6 +4,8 @@ date: 2015-07-20
 layout: default.hbt
 draft: true
 aside: true
+topic: Dev Demo
+tags: here, are, example, tags
 ---
 
 ## Typography (h2)

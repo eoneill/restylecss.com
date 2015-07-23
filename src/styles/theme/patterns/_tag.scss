@@ -3,9 +3,11 @@
   background-color: palette(gray, lighter),
   color: palette(gray, medium),
   padding: 2px 8px,
-  border: 1px solid palette(gray, light),
+  border: 1px solid palette(gray, medium-light),
   border-radius: 10px,
   display: inline-block,
   text-decoration: none,
-  text-transform: lowercase
+  text-transform: lowercase,
+  vertical-align: middle,
+  line-height: 1
 ));

@@ -152,9 +152,6 @@ $sidebar-width: 240px;
 
   code {
     @include restyle(code);
-    pre & {
-      @include restyle(block code);
-    }
 
     h1 &,
     h2 &,
@@ -164,6 +161,10 @@ $sidebar-width: 240px;
     h6 & {
       @include restyle(code in a headline);
     }
+  }
+
+  pre code {
+    @include restyle(block code);
   }
 
   blockquote {

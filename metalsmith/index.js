@@ -66,7 +66,6 @@ module.exports = function(rootDir) {
       // template to use for tag listing
       template: "topic.hbt"
     }))
-    .use(plugins.templateToLayout())
     .use(plugins.permalinksInfo())
     .use(plugins.permalinks({
       pattern: ":collection/:permaname",
@@ -82,7 +81,9 @@ module.exports = function(rootDir) {
     // extract excerpts right before we do the layouts
     .use(plugins.excerpt())
     .use(plugins.tagdata())
-    // use handlebars templates
+    .use(plugins.fixCollections())
+    // use handlebars for layout
+    .use(plugins.templateToLayout())
     .use(plugins.layouts({
       engine: "handlebars"
     }))

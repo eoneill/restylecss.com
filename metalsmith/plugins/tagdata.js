@@ -6,25 +6,26 @@ module.exports = function(options) {
 
   return function(files, metalsmith, done) {
     var metadata = metalsmith.metadata();
+    var collections = metadata.collections;
+
     var tagpages;
     var alltags;
 
-    Object.keys(files).forEach(function(file) {
-      var data = files[file];
-      // if the file pattern matches...
-      if (minimatch(file, "**/*.html")) {
-        if (data.tag) {
+    Object.keys(collections).forEach(function(name) {
+      var collection = collections[name];
+      collection.forEach(function(page) {
+        if (page.tag) {
           tagpages = tagpages || {};
-          tagpages[data.tag] = data;
+          tagpages[page.tag] = data;
         }
-        else if (data.tags) {
+        else if (page.tags) {
           alltags = alltags || {};
-          data.tags.forEach(function(tag) {
+          page.tags.forEach(function(tag) {
             alltags[tag] = alltags[tag] || [];
-            alltags[tag].push(data);
+            alltags[tag].push(page);
           });
         }
-      }
+      });
     });
 
     if (tagpages) {

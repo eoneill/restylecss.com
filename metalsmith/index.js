@@ -20,7 +20,6 @@ module.exports = function(rootDir) {
     .metadata(config)
     .use(config.isServer && plugins.watch({
       paths: {
-        // TODO - this isn't really working right, need to adjust the patterns
         "${source}/content/**/*.md": true,
         "${source}/**/*.html": true,
         "${source}/{styles,images}/**/*": "**/*",
@@ -39,15 +38,16 @@ module.exports = function(rootDir) {
       },
       tutorials: {
         pattern: "content/tutorials/**/*.md",
-        sortBy: "weight"
+        sortBy: "order"
       },
       documentation: {
         pattern: "content/documentation/**/*.md",
-        sortBy: "weight"
+        sortBy: "order"
       },
       examples: {
         pattern: "content/examples/**/*.md",
-        sortBy: "title"
+        sortBy: "title",
+        reverse: true
       }
     }))
     .use(plugins.markdown({
@@ -72,7 +72,6 @@ module.exports = function(rootDir) {
       relative: false
     }))
     .use(plugins.pagedata(config))
-    .use(plugins.aside(config))
     // use handlebars on content
     .use(plugins.inPlace({
       engine: "handlebars",
@@ -80,8 +79,10 @@ module.exports = function(rootDir) {
     }))
     // extract excerpts right before we do the layouts
     .use(plugins.excerpt())
-    .use(plugins.tagdata())
     .use(plugins.fixCollections())
+    .use(plugins.collectionTopics())
+    .use(plugins.tagdata())
+    .use(plugins.aside(config))
     // use handlebars for layout
     .use(plugins.templateToLayout())
     .use(plugins.layouts({
@@ -97,7 +98,7 @@ module.exports = function(rootDir) {
     .use(config.isProd && plugins.htmlMinifier() || noop)
     .use(config.isProd && plugins.uglify() || noop)
     .use(config.isServer && plugins.serve() || noop)
-    .destination(config.destination || "./restylecss.com")
+    .destination(config.destination || "./tmp/restylecss.com")
     .build(function(err) {
       if (err) { throw err; }
     });

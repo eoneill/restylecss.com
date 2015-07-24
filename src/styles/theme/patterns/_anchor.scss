@@ -8,8 +8,7 @@
       color: palette(accent, purple)
     ),
     hover: (
-      color: palette(accent, blue),
-      text-decoration: underline
+      color: palette(accent, blue)
     )
   ),
 
@@ -21,8 +20,7 @@
           color: inherit
         ),
         hover: (
-          color: palette(gray, medium-light),
-          text-decoration: none
+          color: palette(gray, medium-light)
         )
       )
     ),
@@ -33,9 +31,6 @@
       '@restyle.states': (
         visited: (
           color: '@root.color'
-        ),
-        hover: (
-          text-decoration: none
         )
       )
     )

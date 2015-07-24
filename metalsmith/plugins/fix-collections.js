@@ -6,18 +6,7 @@ module.exports = function(config) {
 
   return function(files, metalsmith, done) {
 
-    function findPageByFilename(filename) {
-      var data;
-      if (filename) {
-        Object.keys(files).some(function(file) {
-          if (files[file].filename === filename) {
-            data = files[file];
-            return true;
-          }
-        });
-      }
-      return data;
-    }
+    var findPageBy = require("../findPageBy")(files);
 
     var metadata = metalsmith.metadata();
     var collections = metadata.collections;
@@ -25,7 +14,7 @@ module.exports = function(config) {
     Object.keys(collections).forEach(function(name) {
       //var collection = collections[name];
       collections[name] = collections[name].map(function(page) {
-        return merge(page, findPageByFilename(page.filename));
+        return merge(page, findPageBy("filename", page.filename));
       });
     });
 

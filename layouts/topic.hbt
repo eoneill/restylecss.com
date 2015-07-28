@@ -17,7 +17,7 @@
 
           {{#each this as |tagged|}}
             <article class="topic">
-              <h3><a href="{{link tagged.path}}">{{tagged.title}}</a></h3>
+              <h3><a href="{{link tagged.shortpath}}">{{tagged.title}}</a></h3>
               {{#if tagged.excerpt}}
                 <section class="description">
                   {{tagged.excerpt}}

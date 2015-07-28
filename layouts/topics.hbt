@@ -14,11 +14,11 @@
       <div id="global-content">
 
         <h2>Topics</h2>
-
-        {{#each this.tagpages as |page|}}
-          <h3><a href="{{link page.path}}">{{@key}}</a></h3>
-        {{/each}}
-
+        <ul class="page-tags">
+          {{#each this.tagpages as |page|}}
+            <li class="tag"><a href="{{link page.path}}">{{@key}}</a></li>
+          {{/each}}
+        </ul>
       </div>
     </main>
   </div>

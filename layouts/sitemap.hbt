@@ -9,7 +9,7 @@
       {{#if (or page.changefreq collection.changefreq)}}
         <changefreq>{{or page.changefreq collection.changefreq}}</changefreq>
       {{/if}}
-      <priority>{{or page.priority (or collection.priority '0.8')}}</priority>
+      <priority>{{or page.priority (or collection.priority '0.7')}}</priority>
     </url>
   {{/each}}
 </urlset>

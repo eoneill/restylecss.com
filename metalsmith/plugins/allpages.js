@@ -32,7 +32,12 @@ module.exports = function(options) {
       }
     });
 
-    metadata.pages = pages;
+    metadata.pages = pages.sort(function(a, b) {
+      a = (a && (a.shortpath || a.path)) || "";
+      b = (b && (b.shortpath || b.path)) || "";
+
+      return (a === b) ? 0 : ((a < b) ? -1 : 1);
+    });
 
     metalsmith.metadata(metadata);
 

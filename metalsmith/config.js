@@ -58,6 +58,7 @@ var config = {
     host: "localhost:35729"
   },
   isProd: false,
+  today: Date.now(),
 
   environments: {
     production: {

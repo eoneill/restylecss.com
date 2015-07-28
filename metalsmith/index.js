@@ -83,6 +83,7 @@ module.exports = function(rootDir) {
     .use(plugins.collectionTopics())
     .use(plugins.tagdata())
     .use(plugins.aside(config))
+    .use(plugins.allpages())
     // use handlebars for layout
     .use(plugins.templateToLayout())
     .use(plugins.layouts({

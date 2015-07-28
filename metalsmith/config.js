@@ -32,27 +32,27 @@ var config = {
       name: "eyeglass-restyle"
     },
     badges: "//img.shields.io",
-    nav: [
-      {
+    nav: {
+      documentation: {
         href: "documentation",
         title: "Docs",
         description: "Read the docs!"
       },
-      {
+      github: {
         href: "https://github.com/{git.account}/{git.repo}",
         title: "GitHub",
         description: "View the source on GitHub",
         target: "_blank"
       },
-      {
+      examples: {
         href: "examples",
         title: "Examples"
       },
-      {
+      tutorials: {
         href: "tutorials",
         title: "Tutorials"
       }
-    ]
+    }
   },
   livereload: {
     host: "localhost:35729"

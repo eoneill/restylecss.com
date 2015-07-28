@@ -173,8 +173,15 @@ $sidebar-width: 240px;
 
   // tags
   .page-tags {
+    letter-spacing: -0.31em;
+    word-spacing: -0.43em;
     .tag {
       display: inline-block;
+      letter-spacing: normal;
+      word-spacing: normal;
+      &:not(:last-child) {
+        margin-right: 6px;
+      }
       a {
         @include restyle(tag);
       }

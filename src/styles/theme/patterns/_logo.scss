@@ -9,10 +9,10 @@
   overflow: hidden,
   color: transparent,
   text-decoration: none,
-  transition: ease-in-out 0.3s,
 
   "@restyle.states": (
     hover: (
+      transition: background-color ease-in-out 0.3s,
       background-color: palette(accent, blue)
     )
   )

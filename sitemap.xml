@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+      <loc>http://www.restylecss.com/</loc>
+        <lastmod>2015-07-30</lastmod>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>http://www.restylecss.com/documentation</loc>
+        <lastmod>2015-07-30</lastmod>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>http://www.restylecss.com/examples</loc>
+        <lastmod>2015-07-30</lastmod>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>http://www.restylecss.com/topics</loc>
+        <lastmod>2015-07-30</lastmod>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>http://www.restylecss.com/tutorials</loc>
+        <lastmod>2015-07-30</lastmod>
+      <priority>0.7</priority>
+    </url>
+</urlset>

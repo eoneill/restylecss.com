@@ -1,8 +1,0 @@
-<header id="global-header">
-  <a class="brand" href="{{link ''}}">{{ site.title }}</a>
-  <h1>{{or title page.altTitle}}</h1>
-
-  {{#if this.nav}}
-    {{>nav nav=this.nav id="global-nav" current=page.shortpath}}
-  {{/if}}
-</header>

@@ -1,7 +1,0 @@
-{{#if site.copyright}}
-  <p class="copyright">
-    {{#if site.copyright.website}}<a href="{{link site.copyright.website}}" target="_blank">{{/if}}
-      <span class="holder">{{ site.copyright.holder }}</span> &copy; <span class="year">{{ site.copyright.year }}</span>
-    {{#if site.copyright.website}}</a>{{/if}}
-  </p>
-{{/if}}

@@ -12,7 +12,7 @@ var argv = require("minimist")(process.argv.slice(2), {
 var pkg = require("../package.json");
 var config = {
   site: {
-    themeColor: "#0077b5",
+    themeColor: "#3f3f3f",
     title: "reSTYLE - an eyeglass module",
     description: pkg.description,
     tagline: "TODO",

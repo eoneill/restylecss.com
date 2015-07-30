@@ -45,6 +45,13 @@
       font-size: 14px,
       color: palette(gray, lightest),
       text-shadow: rgba(palette(gray, darkest), 0.2) 1px 1px
+    ),
+
+    in a landing: (
+      color: palette(gray, lightest),
+      '&::after': (
+        display: none
+      )
     )
   )
 ));

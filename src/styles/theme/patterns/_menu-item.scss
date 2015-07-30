@@ -1,7 +1,7 @@
 @include restyle-define(menu-item, (
   '@restyle.modifiers': (
     in a sidebar: (
-      line-height: 2,
+      line-height: 2.4,
       color: palette(gray, light),
       display: block,
       width: 100%,
@@ -16,7 +16,7 @@
         border-bottom: 11px solid transparent,
         border-right: 0 solid palette(canvas),
         position: absolute,
-        right: -20px,
+        right: 0,
         top: 50%,
         margin-top: -11px,
         transition: ease-in-out 0.2s
@@ -26,10 +26,8 @@
         hover: (
           color: palette(gray, lightest)
         ),
-        active: (
-          color: palette(accent, yellow)
-        ),
         hover-active: (
+          background-color: palette(accent, blue),
           '&::after' : (
             border-right-width: 11px
           )

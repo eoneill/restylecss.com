@@ -27,8 +27,12 @@
 
     in nav: (
       '@restyle': extra-small headline,
+      color: palette(gray, lighter),
       line-height: 1,
       '@restyle.states': (
+        hover: (
+          color: palette(gray, lightest)
+        ),
         visited: (
           color: '@root.color'
         )

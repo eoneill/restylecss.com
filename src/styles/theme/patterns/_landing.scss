@@ -1,0 +1,4 @@
+@include restyle-define(landing, (
+  text-align: center,
+  background-image: linear-gradient(to bottom, darken(palette(accent, blue), 20%), palette(accent, blue))
+));

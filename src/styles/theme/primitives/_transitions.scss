@@ -1,0 +1,13 @@
+$-theme-transitions: (
+  ease-in-out: (
+    default: ease-in-out 0.2s
+  )
+);
+
+@function transitions($types...) {
+  $transition: $-theme-transitions;
+  @each $type in $types {
+    $transition: map-get($transition, $type);
+  }
+  @return $transition;
+}

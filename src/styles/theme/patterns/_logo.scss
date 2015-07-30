@@ -1,5 +1,5 @@
 @include restyle-define(logo, (
-  background: palette(brand) url(/images/logos/logo.png) no-repeat 0 0,
+  background: url(/images/logos/logo.png) no-repeat 0 0,
   background-size: 100%,
   border-radius: 5px,
   width: 144px,
@@ -13,7 +13,7 @@
   "@restyle.states": (
     hover: (
       transition: background-color ease-in-out 0.3s,
-      background-color: palette(accent, blue)
+      background-color: palette(badge)
     )
   )
 ));

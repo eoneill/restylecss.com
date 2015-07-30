@@ -52,6 +52,12 @@ module.exports = function(rootDir) {
         reverse: true
       }
     }))
+    // use handlebars on content
+    .use(plugins.inPlace({
+      engine: "handlebars",
+      pattern: "**/*.{md,html}"
+    }))
+    // must happen AFTER #inPlace
     .use(plugins.markdown({
       gfm: true,
       tables: true,
@@ -76,11 +82,6 @@ module.exports = function(rootDir) {
       relative: false
     }))
     .use(plugins.pagedata(config))
-    // use handlebars on content
-    .use(plugins.inPlace({
-      engine: "handlebars",
-      pattern: "**/*.{md,html}"
-    }))
     // the order here kinda matters
     // extract the excerpts (this must happen AFTER #markdown and #inPlace)
     .use(plugins.excerpt())

@@ -123,3 +123,7 @@ We can convert this to a reSTYLE definition as follows:
   }
 }
 ```
+
+## Gist
+
+{{>gist id="45ff2f107ce38d8980f9"}}

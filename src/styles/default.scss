@@ -197,7 +197,12 @@ $sidebar-width: 240px;
   }
 
   blockquote {
-    @include restyle(blockquote);
+    @include restyle(blockquote) {
+      > p {
+        margin: 10px 0;
+      }
+    };
+
   }
 
   // tags

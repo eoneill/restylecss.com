@@ -86,6 +86,10 @@ config.isDev = !config.isProd;
 
 config.isServer = config.isServer || (argv && argv.server);
 
+if (!config.isServer) {
+  config.destination = "./dist";
+}
+
 module.exports = merge(config, {
   argv: argv
 });

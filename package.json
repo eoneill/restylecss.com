@@ -4,7 +4,7 @@
   "description": "TODO - description",
   "main": "index.js",
   "scripts": {
-    "build": "node index.js --env=production",
+    "build": "node index.js --env=production --publish",
     "start": "node index.js --serve",
     "staging": "node index.js --serve --env=staging",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,6 +21,8 @@
     "eyeglass-restyle": "^0.1.6",
     "glob": "^5.0.14",
     "gulp": "^3.9.0",
+    "gulp-gh-pages": "^0.5.2",
+    "gulp-shell": "^0.4.2",
     "handlebars": "^3.0.3",
     "handlebars-helper-equal": "^1.0.0",
     "highlight.js": "^8.6.0",

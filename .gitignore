@@ -30,5 +30,7 @@ build/Release
 node_modules
 
 # Generated code
-/codedoc
+/codedoc/
 /tmp/
+/dist/
+/.publish/

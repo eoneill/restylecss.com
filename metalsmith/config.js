@@ -38,6 +38,11 @@ var config = {
         title: "Docs",
         description: "Read the docs!"
       },
+      api: {
+        href: "api",
+        title: "API",
+        description: "API documentation"
+      },
       github: {
         href: "https://github.com/{git.account}/{git.repo}",
         title: "GitHub",

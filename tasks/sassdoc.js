@@ -1,7 +1,6 @@
 "use strict";
 
 var sassdoc = require("sassdoc");
-var wait = require("gulp-wait");
 
 var restylePath = "./node_modules/eyeglass-restyle/";
 var waitDelay = 1000;

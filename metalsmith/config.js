@@ -52,11 +52,13 @@ var config = {
       },
       examples: {
         href: "examples",
-        title: "Examples"
+        title: "Examples",
+        disabled: true
       },
       tutorials: {
         href: "tutorials",
-        title: "Tutorials"
+        title: "Tutorials",
+        disabled: true
       }
     }
   },

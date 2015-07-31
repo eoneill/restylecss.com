@@ -1,10 +1,12 @@
 ---
-title: Nesting Selectors
+title: reSTYLE Variables
+shorttitle: Variables
+topic: Defining Patterns
+tags: restyle, variables, var, special properties
 layout: default.hbt
-tags: restyle, selectors
 date: 2015-07-20
 draft: true
-order: 999
+order: 1040
 ---
 
 TODO

@@ -1,11 +1,11 @@
 ---
 title: Namespaced Keys
-layout: default.hbt
-topic: TODO
+topic: Defining Patterns
 tags: restyle
+layout: default.hbt
 date: 2015-07-20
 draft: true
-order: 999
+order: 1050
 ---
 
 TODO

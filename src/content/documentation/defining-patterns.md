@@ -1,11 +1,11 @@
 ---
 title: Defining UI Patterns
+topic: Defining Patterns
+tags: getting started, patterns, restyle-define, grammar
 layout: default.hbt
-topic: Getting Started
-tags: getting started, patterns, restyle-define
 date: 2015-07-20
 draft: true
-order: 999
+order: 1000
 ---
 
 TODO

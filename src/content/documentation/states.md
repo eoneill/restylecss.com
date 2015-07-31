@@ -1,11 +1,11 @@
 ---
-title: States (@restyle.states)
-layout: default.hbt
-topic: TODO
+title: States
+topic: Defining Patterns
 tags: restyle, states, special properties
+layout: default.hbt
 date: 2015-07-20
 draft: true
-order: 999
+order: 1020
 ---
 
 TODO

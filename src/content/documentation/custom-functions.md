@@ -1,11 +1,11 @@
 ---
-title: Custom Functions (@restyle.function)
-layout: default.hbt
-topic: TODO
+title: Custom Functions
+topic: Defining Patterns
 tags: restyle, function, special properties
+layout: default.hbt
 date: 2015-07-20
 draft: true
-order: 999
+order: 1070
 ---
 
 TODO

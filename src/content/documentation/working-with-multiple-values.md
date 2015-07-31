@@ -1,10 +1,12 @@
 ---
 title: Working with multiple values
+shorttitle: Multiple Values
+topic: Defining Patterns
+tags: restyle, multiple-values
 layout: default.hbt
-tags: restyle, multivalue
 date: 2015-07-20
 draft: true
-order: 999
+order: 1060
 ---
 
 TODO

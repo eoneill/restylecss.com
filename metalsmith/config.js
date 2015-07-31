@@ -41,7 +41,8 @@ var config = {
       api: {
         href: "api",
         title: "API",
-        description: "API documentation"
+        description: "API documentation",
+        target: "_blank"
       },
       github: {
         href: "https://github.com/{git.account}/{git.repo}",

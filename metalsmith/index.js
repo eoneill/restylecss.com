@@ -116,7 +116,7 @@ module.exports = function(rootDir) {
     .use(config.isProd && plugins.htmlMinifier() || noop)
     .use(config.isProd && plugins.uglify() || noop)
     .use(config.isServer && plugins.serve() || noop)
-    .destination(config.destination || "./tmp/restylecss.com")
+    .destination("./tmp/dist")
     .build(function(err) {
       if (err) { throw err; }
     });

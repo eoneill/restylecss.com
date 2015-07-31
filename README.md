@@ -1,16 +1,21 @@
 # restylecss.com website
 
-## You know the drill...
+This is the source for [restylecss.com](http://www.restylecss.com), which is a hub for [`eyeglass-restyle`](https://github.com/eoneill/eyeglass-restyle).
+
+## Installation
+
+You know the drill...
 
 ```sh
 $ npm install
+$ npm install gulp --global # if you don't already have gulp command line installed
 ```
 
 ## Deploying locally
 
 ```sh
-$ npm start # will start the dev server
-$ npm run staging # will start the staging server (similar to prod build)
+$ gulp serve # will start the dev server
+$ gulp serve:staging # will start the staging server (similar to prod build)
 ```
 
 ## Building

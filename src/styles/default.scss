@@ -46,8 +46,7 @@ $sidebar-width: 240px;
 }
 
 #global-content {
-  max-width: 900px;
-  margin: 0 auto;
+  @extend %wrapper;
 
   h2 {
     @include restyle(large headline) {
@@ -133,6 +132,10 @@ $sidebar-width: 240px;
   .landing {
     @include restyle(landing);
     @include restyle(copy in a landing);
+    .content {
+      @extend %wrapper;
+      padding: 80px 20px;
+    }
 
     h2 {
       @include restyle(large headline in a landing);

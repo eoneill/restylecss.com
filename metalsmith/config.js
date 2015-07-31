@@ -52,13 +52,11 @@ var config = {
       },
       examples: {
         href: "examples",
-        title: "Examples",
-        disabled: true
+        title: "Examples"
       },
       tutorials: {
         href: "tutorials",
-        title: "Tutorials",
-        disabled: true
+        title: "Tutorials"
       }
     }
   },
@@ -71,14 +69,22 @@ var config = {
   environments: {
     production: {
       site: {
-        url: "//www.restylecss.com"
+        url: "//www.restylecss.com",
+        nav: {
+          examples: null,
+          tutorials: null
+        }
       },
       isProd: true,
       livereload: false
     },
     staging: {
       site: {
-        url: ""
+        url: "",
+        nav: {
+          examples: null,
+          tutorials: null
+        }
       },
       isProd: true,
       livereload: false

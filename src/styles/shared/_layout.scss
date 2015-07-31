@@ -1,3 +1,8 @@
+%wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 #global-header {
   @include restyle(global header);
   padding: 20px;

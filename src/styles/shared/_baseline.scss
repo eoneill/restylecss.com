@@ -1,0 +1,12 @@
+%clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+html,
+body {
+  @include restyle(canvas);
+}

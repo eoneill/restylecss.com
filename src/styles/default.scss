@@ -1,104 +1,8 @@
 @import "./theme/baseline";
+@import "./shared/baseline";
 
-%clearfix {
-  &::after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-}
-
-html,
-body {
-  @include restyle(canvas);
-}
-
-#global-header {
-  @include restyle(global header);
-  padding: 20px;
-  position: relative;
-  .brand {
-    @include restyle(logo) {
-      vertical-align: middle;
-    };
-  }
-
-  h1 {
-    @include restyle(title) {
-      display: inline-block;
-      vertical-align: middle;
-      margin-left: 10px;
-    };
-  }
-}
-
-#global-nav {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  li {
-    float: left;
-    margin-right: 20px;
-    position: relative;
-    &::after {
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      content: "";
-      height: 0;
-      margin-right: -8px;
-      position: absolute;
-      right: 50%;
-      width: 0;
-      display: block;
-      bottom: -10px;
-      transition: transitions(ease-in-out, default);
-    }
-    &:hover,
-    &.current {
-      &::after {
-        border-bottom: 8px solid palette(canvas);
-      }
-    }
-  }
-  a {
-    @include restyle(anchor in the global nav) {
-      position: relative;
-      bottom: -7px;
-    };
-  }
-}
-
-#global-footer {
-  @include restyle(global footer);
-  padding: 20px;
-  @extend %clearfix;
-
-  .copyright {
-    display: inline-block;
-    vertical-align: middle;
-
-    .holder {
-      font: 0/0 a;
-      color: transparent;
-      background-image: url(/images/logos/linkedin.png);
-      display: inline-block;
-      height: 16px;
-      width: 65px;
-      vertical-align: text-bottom;
-      background-size: 100%;
-    }
-  }
-
-  .badges {
-    display: inline-block;
-    float: right;
-    .badge {
-      @include restyle(small copy in the global footer, anchor in the global footer) {
-        vertical-align: middle;
-      };
-    }
-  }
-}
+@import "./shared/layout";
+@import "./shared/highlight";
 
 $sidebar-width: 240px;
 #global-container {
@@ -225,12 +129,8 @@ $sidebar-width: 240px;
   flex: 0 0 calc(100% - #{$sidebar-width});
 }
 
-@import "../../node_modules/highlight.js/styles/tomorrow-night.css";
-
-
-// TODO - move to page-specific sass
-#pageid_homepage {
-  #global-container {
+#global-landing {
+  .landing {
     @include restyle(landing);
     @include restyle(copy in a landing);
 
@@ -238,7 +138,7 @@ $sidebar-width: 240px;
       @include restyle(large headline in a landing);
     }
 
-    .get-started {
+    .call-to-action {
       @include restyle(call-to-action button in a landing);
     }
   }

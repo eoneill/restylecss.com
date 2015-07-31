@@ -4,7 +4,7 @@
 {{#if page.author.name }}<meta name="author" content="{{ page.author.name }}"/>{{/if}}
 
 {{>stylesheets styles=site.styles}}
-{{>stylesheets styles=template-styles}}
+{{>stylesheets styles=this.stylesheets}}
 {{>stylesheets styles=page.styles}}
 
 {{#if page.shortpath}}

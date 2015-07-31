@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-  {{> head stylesheets='default'}}
+  {{> head }}
 </head>
 
 <body class="{{ page.class }}{{inline-if page.aside '' ' full-width'}}" id="pageid_{{ page.id }}">

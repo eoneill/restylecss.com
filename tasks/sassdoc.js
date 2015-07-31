@@ -13,9 +13,9 @@ module.exports = function(gulp, depends) {
       package: restylePath + "package.json"
     });
 
-    return gulp.src(restylePath + "sass/**/*.s[ac]ss")
-      .pipe(stream)
-      // TODO - this is a hack :(
-      .pipe(wait(waitDelay));
+    gulp.src(restylePath + "sass/**/*.s[ac]ss")
+      .pipe(stream);
+
+    return stream.promise;
   });
 };

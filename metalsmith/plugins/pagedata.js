@@ -20,7 +20,7 @@ module.exports = function(config) {
         data.id = data.id || ((data.shortpath || "homepage").replace(/[^a-z0-9_-]/gi, "_"));
 
         // expose everything on a `page` sub node
-        data.page = merge(data.page || {}, data);
+        data.page = data.page ? merge(data.page, data) : data;
       }
     });
     done();

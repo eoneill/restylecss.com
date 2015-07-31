@@ -1,6 +1,5 @@
 ---
 title: Property References
-shorttitle: Property References
 topic: Defining Patterns
 tags: restyle, referencing, this, root, parent, special properties
 layout: default.hbt

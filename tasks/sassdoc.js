@@ -8,7 +8,7 @@ var waitDelay = 1000;
 module.exports = function(gulp, depends) {
   gulp.task("sassdoc", depends || [], function () {
     var stream = sassdoc({
-      dest: "./tmp/dist/api",
+      dest: "./src/api",
       package: restylePath + "package.json"
     });
 

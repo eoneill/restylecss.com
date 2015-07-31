@@ -7,25 +7,25 @@ This is the source for [restylecss.com](http://www.restylecss.com), which is a h
 You know the drill...
 
 ```sh
-$ npm install
-$ npm install gulp --global # if you don't already have gulp command line installed
+npm install
+npm install gulp --global # if you don't already have gulp command line installed
 ```
 
 ## Deploying locally
 
 ```sh
-$ gulp serve # will start the dev server
-$ gulp serve:staging # will start the staging server (similar to prod build)
+gulp serve # will start the dev server
+gulp serve:staging # will start the staging server (similar to prod build)
 ```
 
 ## Building
 
 ```sh
-$ gulp build
+gulp build
 ```
 
 ## Deploying to the web
 
 ```sh
-$ gulp deploy
+gulp deploy
 ```

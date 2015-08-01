@@ -2,11 +2,10 @@
 
 var gulp = require("gulp");
 
-require("./tasks/metalsmith")(gulp, ["sassdoc", "version-docs"]);
+require("./tasks/build")(gulp, ["doc"]);
 require("./tasks/sassdoc")(gulp);
-require("./tasks/version-docs")(gulp, ["sassdoc"]);
+require("./tasks/doc")(gulp, ["sassdoc"]);
 require("./tasks/deploy")(gulp, ["build"]);
-require("./tasks/serve")(gulp);
+require("./tasks/serve")(gulp, ["doc"]);
 
-gulp.task("build", ["metalsmith"]);
-gulp.task("default", ["deploy"]);
+gulp.task("default", ["build"]);

@@ -2,12 +2,11 @@
   "name": "restylecss.com",
   "version": "0.0.0",
   "description": "The static site builder for restylecss.com, the hub for eyeglass-restyle",
-  "main": "index.js",
+  "main": "build.js",
   "scripts": {
-    "build": "node index.js --env=production --publish",
-    "start": "node index.js --serve",
-    "staging": "node index.js --serve --env=staging",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "./node_modules/.bin/gulp build",
+    "start": "./node_modules/.bin/gulp serve",
+    "test": "./node_modules/.bin/gulp test"
   },
   "homepage": "http://restylecss.com",
   "issues": "https://github.com/eoneill/restylecss.com/issues",
@@ -51,6 +50,7 @@
     "minimist": "^1.1.2",
     "moment": "^2.10.6",
     "node-sass": "^3.2.0",
+    "nodetree": "0.0.2",
     "sassdoc": "^2.1.15"
   }
 }

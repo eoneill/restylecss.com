@@ -2,20 +2,26 @@
 
 var merge = require("lodash.merge");
 
-var argv = require("minimist")(process.argv.slice(2), {
-  alias: {
-    env: "environment",
-    serve: "server"
-  }
-});
+function getConfig(options) {
+  options = options || {};
+  var newConfig = merge(merge({}, config), options);
 
-var pkg = require("../package.json");
+  if (options.environment) {
+    newConfig = merge(newConfig, (config.environments && config.environments[options.environment]) || {});
+  }
+
+  config.isDev = !config.isProd;
+
+  return newConfig;
+}
+
+
 var config = {
   site: {
     themeColor: "#3f3f3f",
-    title: "reSTYLE - an eyeglass module",
-    description: pkg.description,
-    tagline: "TODO",
+    title: "reSTYLE",
+    tagline: "UI Patterns. For Sass.",
+    description: "TODO",
     styles: ["default.css"],
     copyright: {
       holder: "LinkedIn Corporation",
@@ -65,6 +71,7 @@ var config = {
   },
   isProd: false,
   today: Date.now(),
+  dest: "./tmp/dist",
 
   environments: {
     production: {
@@ -92,14 +99,4 @@ var config = {
   }
 };
 
-if (argv.environment) {
-  config = merge(config, (config.environments && config.environments[argv.environment]) || {});
-}
-
-config.isDev = !config.isProd;
-
-config.isServer = config.isServer || (argv && argv.server);
-
-module.exports = merge(config, {
-  argv: argv
-});
+module.exports = getConfig;

@@ -1,15 +1,15 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>{{#if page.title}}{{ page.title }} {{#if page.tagline}}({{ page.tagline }}) {{/if}}| {{/if}}{{ site.title }}</title>
+<title>{{#if page.title}}{{ page.title }} {{#if page.tagline}}({{ page.tagline }}) {{/if}}| {{/if}}{{ site.title }}{{#if site.tagline}} - {{site.tagline}}{{/if}}</title>
 {{#if page.author.name }}<meta name="author" content="{{ page.author.name }}"/>{{/if}}
 
 {{>stylesheets styles=site.styles}}
 {{>stylesheets styles=this.stylesheets}}
 {{>stylesheets styles=page.styles}}
 
-{{#if page.shortpath}}
-  <link rel="canonical" href="{{link page.shortpath }}"/>
-  <meta property="og:url" content="{{link page.shortpath }}"/>
+{{#if (or page.shortpath page.path)}}
+  <link rel="canonical" href="{{link (or page.shortpath page.path) }}"/>
+  <meta property="og:url" content="{{link (or page.shortpath page.path) }}"/>
 {{/if}}
 
 <meta property="og:site_name" content="{{ site.title }}"/>

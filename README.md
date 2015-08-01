@@ -29,3 +29,17 @@ gulp build
 ```sh
 gulp deploy
 ```
+
+To perform a dry-run deployment (without pushing)...
+
+```sh
+gulp deploy:dry
+```
+
+## Tests
+
+Currently the tests just validate that `deploy:dry` completes and prints the tree of files staged for deployment.
+
+```sh
+gulp test
+```

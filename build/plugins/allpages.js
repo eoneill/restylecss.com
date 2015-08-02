@@ -42,5 +42,5 @@ module.exports = function(options) {
     metalsmith.metadata(metadata);
 
     done();
-  }
+  };
 };

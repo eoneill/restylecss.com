@@ -1,12 +1,9 @@
 "use strict";
 
-var minimatch = require("minimatch");
-
 module.exports = function(options) {
 
   return function(files, metalsmith, done) {
     var metadata = metalsmith.metadata();
-    var collections = metadata.collections;
 
     var tagpages;
     var alltags;
@@ -40,5 +37,5 @@ module.exports = function(options) {
     }
 
     done();
-  }
+  };
 };

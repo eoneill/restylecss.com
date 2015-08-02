@@ -2,20 +2,6 @@
 
 var merge = require("lodash.merge");
 
-function getConfig(options) {
-  options = options || {};
-  var newConfig = merge(merge({}, config), options);
-
-  if (options.environment) {
-    newConfig = merge(newConfig, (config.environments && config.environments[options.environment]) || {});
-  }
-
-  config.isDev = !config.isProd;
-
-  return newConfig;
-}
-
-
 var config = {
   site: {
     themeColor: "#3f3f3f",
@@ -104,4 +90,15 @@ var config = {
   }
 };
 
-module.exports = getConfig;
+module.exports = function(options) {
+  options = options || {};
+  var newConfig = merge(merge({}, config), options);
+
+  if (options.environment) {
+    newConfig = merge(newConfig, (config.environments && config.environments[options.environment]) || {});
+  }
+
+  config.isDev = !config.isProd;
+
+  return newConfig;
+};

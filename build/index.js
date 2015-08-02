@@ -1,18 +1,11 @@
 var Metalsmith = require("metalsmith");
 var Handlebars = require("handlebars");
-var path = require("path");
 var argv = require("minimist")(process.argv.slice(2), {
   alias: {
     env: "environment",
     serve: "server"
   }
 });
-
-function debug(files, metalsmith, done) {
-  console.log("[metalsmith:files]", files);
-  console.log("[metalsmith:metalsmith]", metalsmith);
-  done();
-}
 
 function noop(files, metalsmith, done) {
   done();
@@ -131,8 +124,8 @@ module.exports = function(rootDir) {
     .use(config.isServer && plugins.serve() || noop)
     .destination(config.dest)
     .build(function(err) {
-      if (err) { throw err; }
+      if (err) {
+        throw err;
+      }
     });
-}
-
-
+};

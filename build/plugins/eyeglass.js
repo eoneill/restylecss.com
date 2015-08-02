@@ -27,5 +27,5 @@ module.exports = function(options) {
 
     // hand it off to metalsmith-sass
     sass(eyeglass.decorate(options)).apply(sass, arguments);
-  }
+  };
 };

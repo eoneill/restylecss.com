@@ -1,6 +1,5 @@
 "use strict";
 
-var merge = require("lodash.merge");
 var minimatch = require("minimatch");
 //var cheerio = require("cheerio");
 
@@ -10,10 +9,11 @@ module.exports = function(options) {
   return function(files, metalsmith, done) {
     Object.keys(files).forEach(function(file) {
       var data = files[file];
+      var contents;
 
       // if the file pattern matches...
       if (minimatch(file, "api/**/*.html")) {
-        var contents = data.contents && data.contents.toString();
+        contents = data.contents && data.contents.toString();
 
         if (contents) {
           contents = contents.replace(/Eyeglass-restyle/g, "eyeglass-restyle");
@@ -30,7 +30,7 @@ module.exports = function(options) {
         }
       }
       else if (minimatch(file, "api/**/*.css")) {
-        var contents = data.contents && data.contents.toString();
+        contents = data.contents && data.contents.toString();
         // replace some colors for now...
         if (contents) {
           contents = contents.replace(/(#dd5a6f|#5c4863)/g, "#3f3f3f");
@@ -39,5 +39,5 @@ module.exports = function(options) {
       }
     });
     done();
-  }
+  };
 };

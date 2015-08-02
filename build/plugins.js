@@ -1,7 +1,5 @@
 "use strict";
 
-var fs = require("fs");
-var merge = require("lodash.merge");
 var camelCase = require("camelcase");
 var plugins = require("load-metalsmith-plugins")();
 var glob = require("glob");

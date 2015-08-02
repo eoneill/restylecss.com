@@ -8,5 +8,5 @@ module.exports = function(Handlebars, config) {
     require("../partials")(Handlebars);
 
     done();
-  }
+  };
 };

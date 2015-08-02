@@ -38,10 +38,12 @@ module.exports = function(gulp, depends) {
         }),
         shortcutIcon: "./src/favicon-32x32.png"
       });
+
+      // start processing the job
       gulp.src(path + "sass/**/*.s[ac]ss")
         .pipe(job);
 
-      // push the job onto the array
+      // push the promise onto the array so we can track it
       jobs.push(job.promise);
     }
 

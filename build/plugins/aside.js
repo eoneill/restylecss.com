@@ -1,6 +1,5 @@
 "use strict";
 
-var merge = require("lodash.merge");
 var minimatch = require("minimatch");
 
 module.exports = function(config) {
@@ -39,5 +38,5 @@ module.exports = function(config) {
     });
 
     done();
-  }
+  };
 };

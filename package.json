@@ -52,7 +52,7 @@
     "moment": "^2.10.6",
     "node-sass": "^3.2.0",
     "nodetree": "0.0.2",
-    "restyle-theme-restylecss.com": "git@github.com:eoneill/restyle-theme-restylecss.com.git",
+    "restyle-theme-restylecss.com": "^0.0.14",
     "sassdoc": "^2.1.15"
   }
 }

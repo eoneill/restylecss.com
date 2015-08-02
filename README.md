@@ -8,7 +8,7 @@ You know the drill...
 
 ```sh
 npm install
-npm install gulp --global # if you don't already have gulp command line installed
+npm install gulp --global # if you don't already have the gulp cli installed
 ```
 
 ## Deploying locally

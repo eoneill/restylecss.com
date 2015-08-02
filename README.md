@@ -38,7 +38,7 @@ gulp deploy:dry
 
 ## Tests
 
-Currently the tests just validate that `deploy:dry` completes and prints the tree of files staged for deployment.
+Make sure you didn't break anything by running the tests :)
 
 ```sh
 gulp test

@@ -121,6 +121,10 @@ module.exports = function(rootDir) {
     // use auto-prefixer (must happen AFTER #eyeglass)
     .use(plugins.autoprefixer())
 
+    .use(plugins.sassdocPatch({
+      homepage: "/"
+    }))
+
     // this is all post-process stuff, which should happen at the very end
     .use(config.isProd && plugins.htmlMinifier() || noop)
     .use(config.isProd && plugins.uglify() || noop)

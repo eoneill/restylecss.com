@@ -1,8 +1,8 @@
-<nav id="{{id}}" class="{{class}}">
+<nav {{#if id}}id="{{id}}"{{/if}} {{#if class}}class="{{class}}"{{/if}}>
   <ul>
     {{#each nav as |item|}}
       {{#if (and item (not item.disabled))}}
-        <li class="{{item.type}}{{#if (child-of ../../current item.href)}}current{{/if}}"><a href="{{link item.href}}" target="{{item.target}}" title="{{item.description}}">{{item.title}}</a></li>
+        <li {{#if (child-of ../../current item.href)}}class="current"{{/if}}><a href="{{link item.href}}" {{#if item.target}}target="{{item.target}}"{{/if}} {{#if item.description}}title="{{item.description}}"{{/if}}>{{item.title}}</a></li>
       {{/if}}
     {{/each}}
   </ul>

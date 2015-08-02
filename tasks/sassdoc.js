@@ -1,6 +1,7 @@
 "use strict";
 
 var sassdoc = require("sassdoc");
+var merge = require("lodash.merge");
 var fs = require("fs-extra");
 var exec = require("child_process").execSync;
 var config = require("../config")();
@@ -17,6 +18,7 @@ module.exports = function(gulp, depends) {
     var jobs = [];
 
     function addJob(version, isStable) {
+
       var path = installPath + "eyeglass-restyle@" + version + "/";
 
       // if it already exists, don't download it again
@@ -30,7 +32,11 @@ module.exports = function(gulp, depends) {
       var job = sassdoc({
         // only add a versioned directory if it's not flagged as stable
         dest: destPath + (isStable ? "" : "v" + version),
-        package: path + "package.json"
+        package: merge(require("../" + path + "package.json"), {
+          title: "eyeglass-restyle",
+          homepage: "/"
+        }),
+        shortcutIcon: "./src/favicon-32x32.png"
       });
       gulp.src(path + "sass/**/*.s[ac]ss")
         .pipe(job);

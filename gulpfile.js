@@ -2,7 +2,7 @@
 
 var gulp = require("gulp");
 
-require("./tasks/build")(gulp, ["doc"]);
+require("./tasks/build")(gulp, ["sassdoc"]);
 require("./tasks/sassdoc")(gulp);
 require("./tasks/deploy")(gulp, ["build"]);
 require("./tasks/serve")(gulp, ["sassdoc"]);

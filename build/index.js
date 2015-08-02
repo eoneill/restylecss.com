@@ -118,6 +118,13 @@ module.exports = function(rootDir) {
       homepage: "/"
     }))
 
+    .use(plugins.redirect({
+      "/documentation": "/documentation/getting-started",
+      "/getting-started": "/documentation/getting-started",
+      "/configuration": "/documentation/configuration",
+      "/github": "https://github.com/" + config.site.git.account + "/" + config.site.git.repo
+    }))
+
     // this is all post-process stuff, which should happen at the very end
     .use(config.isProd && plugins.htmlMinifier() || noop)
     .use(config.isProd && plugins.uglify() || noop)

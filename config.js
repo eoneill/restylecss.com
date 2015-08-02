@@ -37,7 +37,7 @@ var config = {
         target: "_blank"
       },
       github: {
-        href: "https://github.com/{git.account}/{git.repo}",
+        href: "github",
         title: "GitHub",
         description: "View the source on GitHub",
         target: "_blank"
@@ -59,8 +59,6 @@ var config = {
   today: Date.now(),
   dest: "./tmp/dist",
   documentedVersions: [
-    "0.1.4",
-    "0.1.5",
     "0.1.6"
   ],
 

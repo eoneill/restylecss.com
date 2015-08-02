@@ -19,7 +19,7 @@ module.exports = function(gulp, depends) {
 
     function addJob(version, isStable) {
 
-      var path = installPath + "eyeglass-restyle@" + version + "/";
+      var path = installPath + ".eyeglass-restyle@" + version + "/";
 
       // if it already exists, don't download it again
       if (!fs.existsSync(path)) {

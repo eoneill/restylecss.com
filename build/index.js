@@ -20,6 +20,7 @@ module.exports = function(rootDir) {
 
   new Metalsmith(rootDir)
     .metadata(config)
+    .use(plugins.uuid())
     .use(config.isServer && plugins.watch({
       paths: {
         "${source}/content/**/*.md": true,

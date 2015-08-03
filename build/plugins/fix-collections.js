@@ -14,7 +14,7 @@ module.exports = function(config) {
     Object.keys(collections).forEach(function(name) {
       //var collection = collections[name];
       collections[name] = collections[name].map(function(page) {
-        return merge(page, findPageBy("filename", page.filename));
+        return merge(page, findPageBy("uuid", page.uuid));
       });
     });
 

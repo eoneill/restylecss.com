@@ -6,7 +6,7 @@ var fs = require("fs-extra");
 var exec = require("child_process").execSync;
 var config = require("../config")();
 
-var installPath = "./tmp/";
+var downloadRoot = "./tmp/.eyeglass-restyle/";
 var destPath = "./src/api/"
 var versions = config.documentedVersions;
 var stableVersion = config.stableVersion || versions[versions.length - 1];
@@ -18,21 +18,27 @@ module.exports = function(gulp, depends) {
     var jobs = [];
 
     function addJob(version, isStable) {
+      fs.mkdirp(downloadRoot);
 
-      var path = installPath + ".eyeglass-restyle@" + version + "/";
+      var downloadPath = downloadRoot + "eyeglass-restyle-" + version + "/";
+      var downloadZip = downloadRoot + version + ".zip";
 
       // if it already exists, don't download it again
-      if (!fs.existsSync(path)) {
+      if (!fs.existsSync(downloadPath)) {
         console.log("downloading eyeglass-restyle@" + version + " before running SassDoc");
-        // otherwise, download it from git
-        exec("git clone --branch v" + version + " " + gitRepo + " " + path);
+        // otherwise, download it from github
+        exec([
+          "curl -L -o " + downloadZip + " https://github.com/eoneill/eyeglass-restyle/archive/v" + version + ".zip &> /dev/null",
+          "unzip " + downloadZip + " -d " + downloadRoot + " &> /dev/null",
+          "ls -laR " + downloadPath
+        ].join(" && "));
       }
 
       // create a new job for sassdoc
       var job = sassdoc({
         // only add a versioned directory if it's not flagged as stable
         dest: destPath + (isStable ? "" : "v" + version),
-        package: merge(require("../" + path + "package.json"), {
+        package: merge(require("../" + downloadPath + "package.json"), {
           title: "eyeglass-restyle",
           homepage: "/"
         }),
@@ -40,7 +46,7 @@ module.exports = function(gulp, depends) {
       });
 
       // start processing the job
-      gulp.src(path + "sass/**/*.s[ac]ss")
+      gulp.src(downloadPath + "sass/**/*.s[ac]ss")
         .pipe(job);
 
       // push the promise onto the array so we can track it

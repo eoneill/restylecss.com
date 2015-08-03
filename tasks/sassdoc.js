@@ -37,31 +37,28 @@ module.exports = function(gulp, depends, options) {
       var extractPath = options.tmp + "eyeglass-restyle-" + version + "/";
 
       var whenSourceReady = pendingSources[version] || new Promise(function(resolve, reject) {
-        try {
-          // if it already exists, don't download it again
-          if (!fs.existsSync(extractPath)) {
-            // otherwise, download it from github
-            console.log("downloading eyeglass-restyle@v" + version + " before performing SassDoc");
-            wget.download(archiveUrl, archivePath)
-              .on("end", function(output) {
-                exec([
-                  useTarGz ? "tar -zxvf" : "unzip",
-                  archivePath,
-                  useTarGz ? "-C" : "-d",
-                  options.tmp,
-                  "&> /dev/null"
-                ].join(" "));
-                resolve();
-              })
-              .on("error", function(err) {
-                reject(err);
-              });
-          }
-          else {
-            resolve();
-          }
+        // if it already exists, don't download it again
+        if (!fs.existsSync(extractPath)) {
+          // otherwise, download it from github
+          console.log("downloading eyeglass-restyle@v" + version + " before performing SassDoc");
+          wget.download(archiveUrl, archivePath)
+            .on("end", function(output) {
+              exec([
+                useTarGz ? "tar -zxvf" : "unzip",
+                archivePath,
+                useTarGz ? "-C" : "-d",
+                options.tmp,
+                "&> /dev/null"
+              ].join(" "));
+              resolve();
+            })
+            .on("error", function(err) {
+              reject(err);
+            });
         }
-        catch (e) {console.log(e)};
+        else {
+          resolve();
+        }
       });
       pendingSources[version] = whenSourceReady;
 

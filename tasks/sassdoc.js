@@ -7,42 +7,48 @@ var wget = require("wget-improved");
 var exec = require("child_process").execSync;
 var config = require("../config")();
 
-var downloadRoot = "./tmp/versions/";
-var destPath = "./src/api/"
-var versions = config.documentedVersions;
-var stableVersion = config.stableVersion || versions[versions.length - 1];
-var useTarGz = !config.useZip;
-var gitRepo = config.repo || "eoneill/eyeglass-restyle";
+module.exports = function(gulp, depends, options) {
+  options = merge({
+    tmp: "./tmp/versions/",
+    dest: "./src/api/",
+    versions: config.documentedVersions,
+    archiveExtension: ".tar.gz",
+    repo: config.site.git && (config.site.git.account + "/" + config.site.git.repo),
+    includeStable: true
+  }, options);
 
-module.exports = function(gulp, depends) {
+  options.stableVersion = options.stableVersion || options.versions && options.versions[options.versions.length - 1];
+
+  var useTarGz = /\.t(?:ar\.)?gz$/.test(options.archiveExtension);
+
   gulp.task("sassdoc", depends || [], function () {
     var jobs = [];
     var pendingSources = {};
     var packageExtension = useTarGz ? ".tar.gz" : ".zip";
 
     function addJob(version, isStable) {
-      fs.mkdirp(downloadRoot);
+      fs.mkdirp(options.tmp);
 
+      // the URL to download the archive from
+      var archiveUrl = "https://github.com/" + options.repo + "/archive/v" + version + options.archiveExtension;
+      // the local path to download the archive to
+      var archivePath = options.tmp + version + options.archiveExtension;
+      // the path to extract to
+      var extractPath = options.tmp + "eyeglass-restyle-" + version + "/";
 
-      var downloadPath = downloadRoot + "eyeglass-restyle-" + version + "/";
-      var downloadSource = "https://github.com/" + gitRepo + "/archive/v" + version + packageExtension;
-      var downloadPackage = downloadRoot + version + packageExtension;
-      var whenSourceReady = new Promise(function(resolve, reject) {
-        // if it already exists, don't download it again
-        if (!fs.existsSync(downloadPath)) {
-          if (pendingSources[version]) {
-            pendingSources[version].then(resolve);
-          }
-          else {
+      var whenSourceReady = pendingSources[version] || new Promise(function(resolve, reject) {
+        try {
+          // if it already exists, don't download it again
+          if (!fs.existsSync(extractPath)) {
             // otherwise, download it from github
             console.log("downloading eyeglass-restyle@v" + version + " before performing SassDoc");
-            wget.download(downloadSource, downloadPackage)
+            wget.download(archiveUrl, archivePath)
               .on("end", function(output) {
                 exec([
                   useTarGz ? "tar -zxvf" : "unzip",
-                  downloadPackage,
+                  archivePath,
                   useTarGz ? "-C" : "-d",
-                  downloadRoot,
+                  options.tmp,
                   "&> /dev/null"
                 ].join(" "));
                 resolve();
@@ -51,10 +57,11 @@ module.exports = function(gulp, depends) {
                 reject(err);
               });
           }
+          else {
+            resolve();
+          }
         }
-        else {
-          resolve();
-        }
+        catch (e) {console.log(e)};
       });
       pendingSources[version] = whenSourceReady;
 
@@ -63,8 +70,8 @@ module.exports = function(gulp, depends) {
         whenSourceReady.then(function() {
           var stream = sassdoc({
             // only add a versioned directory if it's not flagged as stable
-            dest: destPath + (isStable ? "" : "v" + version),
-            package: merge(require("../" + downloadPath + "package.json"), {
+            dest: options.dest + (isStable ? "" : "v" + version),
+            package: merge(require("../" + extractPath + "package.json"), {
               title: "eyeglass-restyle",
               homepage: "/"
             }),
@@ -73,7 +80,7 @@ module.exports = function(gulp, depends) {
 
           stream.promise.then(resolve);
 
-          gulp.src(downloadPath + "sass/**/*.s[ac]ss")
+          gulp.src(extractPath + "sass/**/*.s[ac]ss")
             .pipe(stream);
         });
 
@@ -84,14 +91,18 @@ module.exports = function(gulp, depends) {
     }
 
     // remove the /api dir
-    fs.removeSync(destPath);
+    fs.removeSync(options.dest);
 
     // create a job for all
-    versions.map(function(version) {
-      addJob(version);
-    });
+    if (options.versions) {
+      options.versions.map(function(version) {
+        addJob(version);
+      });
+    }
 
-    addJob(stableVersion, true);
+    if (options.includeStable && options.stableVersion) {
+      addJob(options.stableVersion, true);
+    }
 
     return Promise.all(jobs);
   });

@@ -1,8 +1,8 @@
 {
   "name": "restylecss.com",
-  "version": "0.0.0",
   "description": "The static site builder for restylecss.com, the hub for eyeglass-restyle",
   "main": "build.js",
+  "private": true,
   "scripts": {
     "start": "./node_modules/.bin/gulp serve",
     "test": "./node_modules/.bin/gulp test"

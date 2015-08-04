@@ -1,7 +1,4 @@
-%wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-}
+@import "./util";
 
 #global-header {
   @include restyle(global header);
@@ -26,6 +23,9 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  @include small-screen {
+    position: static;
+  }
   li {
     float: left;
     margin-right: 20px;

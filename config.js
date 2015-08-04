@@ -9,6 +9,7 @@ var config = {
     tagline: "UI Patterns. For Sass.",
     description: "TODO",
     styles: ["default.css"],
+    scripts: ["default.js"],
     copyright: {
       holder: "LinkedIn Corporation",
       year: new Date().getFullYear(),

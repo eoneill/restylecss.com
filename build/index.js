@@ -25,7 +25,7 @@ module.exports = function(rootDir) {
       paths: {
         "${source}/content/**/*.md": true,
         "${source}/**/*.html": true,
-        "${source}/{styles,images}/**/*": "**/*",
+        "${source}/{styles,images,scripts}/**/*": "**/*",
         "layouts/**/*": "**/*"
       },
       livereload: !!config.livereload

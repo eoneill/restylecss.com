@@ -5,3 +5,5 @@
     {{>badges}}
   </div>
 </footer>
+
+{{>scripts-foot}}

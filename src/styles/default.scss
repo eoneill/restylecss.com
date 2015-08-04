@@ -1,6 +1,7 @@
 @import "restylecss.com/baseline";
 @import "./shared/baseline";
 
+@import "./shared/util";
 @import "./shared/layout";
 @import "./shared/highlight";
 
@@ -9,6 +10,10 @@ $sidebar-width: 240px;
   width: 100%;
   display: flex;
   flex: 0 1 auto;
+  @include small-screen {
+    display: block;
+    @include flex-reset;
+  }
 }
 
 #global-sidebar,
@@ -21,6 +26,9 @@ $sidebar-width: 240px;
   @include restyle(sidebar) {
     flex: 0 0 $sidebar-width;
     padding: 40px 20px;
+    @include small-screen {
+      @include flex-reset;
+    }
   };
 
   a {
@@ -38,11 +46,34 @@ $sidebar-width: 240px;
       }
     };
   }
+
+  @include small-screen {
+    #global-sidebar-content:not(.expanded) {
+      @extend %visually-hidden;
+    }
+  }
+
+  #menu-toggle {
+    display: none;
+    width: 100%;
+    height: 14px;
+    margin: 8px;
+    color: palette(gray, lightest);
+    font: 0/0 a;
+    background: url(/images/menu.png) no-repeat 50% 50%;
+    background-size: auto 100%;
+    @include small-screen {
+      display: block;
+    }
+  }
 }
 
 #global-main {
-  flex: 0 0 100%;
   padding: 80px 20px;
+  flex: 0 0 100%;
+  @include small-screen {
+    @include flex-reset;
+  }
 }
 
 #global-content {
@@ -156,6 +187,9 @@ $sidebar-width: 240px;
 // when we have a sidebar and a main, calculate the new width
 #global-sidebar + #global-main {
   flex: 0 0 calc(100% - #{$sidebar-width});
+  @include small-screen {
+    @include flex-reset;
+  };
 }
 
 #global-landing {

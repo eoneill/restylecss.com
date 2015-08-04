@@ -82,4 +82,6 @@ That's it! You're now ready to create your own UI patterns.
 
 ## Up next
 
-Learn more about <!--TODO[what makes up a UI pattern]({{link "documentation/what-are-ui-patterns"}}), [defining UI patterns]({{link "documentation/defining-ui-patterns"}}), and--> [configuration options]({{link "documentation/configuration"}}).
+Learn more about [configuration options]({{link "documentation/configuration"}}).
+
+<!--TODO[what makes up a UI pattern]({{link "documentation/what-are-ui-patterns"}}), [defining UI patterns]({{link "documentation/defining-ui-patterns"}}), and-->

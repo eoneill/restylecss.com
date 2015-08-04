@@ -11,7 +11,7 @@ order: 10
 
 reSTYLE uses a configuration interface to enable certain features and modify internal behavior.
 
-The configuration interface for reSTYLE is exposed via the `restyle-config` method.
+The configuration interface for reSTYLE is exposed via the `restyle-config` methods.
 
 Below you'll find a list of supported configuration options.
 

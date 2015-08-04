@@ -25,7 +25,6 @@ module.exports = function(rootDir) {
       directory: "./",
       move: true
     }))
-    .use(plugins.debug())
     .use(plugins.uuid())
     .use(config.isServer && plugins.watch({
       paths: {

@@ -6,7 +6,7 @@ module.exports = function(config) {
 
   return function(files, metalsmith, done) {
 
-    var findPageBy = require("../findPageBy")(files);
+    var findPageBy = require("../util/findPageBy")(files);
 
     var metadata = metalsmith.metadata();
     var collections = metadata.collections;

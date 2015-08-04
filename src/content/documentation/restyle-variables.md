@@ -9,4 +9,9 @@ draft: true
 order: 1050
 ---
 
-TODO
+TODO...
+
+Discuss:
+- `@restyle.var`
+- `@var`
+- lazy evaluation

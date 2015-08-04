@@ -8,4 +8,9 @@ draft: true
 order: 30
 ---
 
-TODO
+TODO...
+
+Discuss:
+- type
+- description
+- special words

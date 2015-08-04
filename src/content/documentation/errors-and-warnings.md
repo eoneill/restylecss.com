@@ -8,4 +8,6 @@ draft: true
 order: 2020
 ---
 
-TODO
+TODO...
+
+Discuss any warnings/errors that reSTYLE throws

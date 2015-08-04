@@ -8,4 +8,9 @@ draft: true
 order: 1080
 ---
 
-TODO
+TODO...
+
+Discuss:
+
+- `@restyle.function`
+- why you would use a custom function

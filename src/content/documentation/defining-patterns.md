@@ -8,4 +8,10 @@ draft: true
 order: 1000
 ---
 
-TODO
+TODO...
+
+Discuss:
+- `restyle-define`
+- `restyle-define` capturing
+- basic properties
+- some more advanced examples linking to detailed topics

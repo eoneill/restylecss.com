@@ -8,4 +8,8 @@ draft: true
 order: 1060
 ---
 
-TODO
+TODO...
+
+Discuss:
+- `property{namespace}` syntax
+- why to use it

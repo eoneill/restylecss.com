@@ -108,9 +108,32 @@ $sidebar-width: 240px;
 
   }
 
+  // TODO - move to a UI pattern
+  table {
+    border: 1px solid palette(gray, medium-light);
+    border-spacing: 0;
+    width: 100%;
+  }
+  thead {
+    background-color: palette(gray, light);
+  }
+  tr:not(:last-child) {
+    border-bottom: 1px solid palette(gray, medium-light);
+  }
+  th, td {
+    &:not(:last-child) {
+      border-right: 1px solid palette(gray, medium-light);
+    }
+    padding: 10px 20px;
+    code {
+      white-space: pre;
+    }
+  }
+
   // tags
   .page-tags {
     @extend %clearfix;
+    margin-top: 40px;
     .tag {
       float: left;
       &:not(:last-child) {

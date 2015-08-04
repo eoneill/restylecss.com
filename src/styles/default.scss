@@ -216,6 +216,14 @@ $sidebar-width: 240px;
     .call-to-action {
       @include restyle(call-to-action button in a landing);
     }
+
+    pre {
+      max-width: 100%;
+      code {
+        display: block;
+        white-space: pre-line;
+      }
+    }
   }
 }
 

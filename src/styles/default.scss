@@ -49,7 +49,7 @@ $sidebar-width: 240px;
 
   @include small-screen {
     #global-sidebar-content:not(.expanded) {
-      @extend %visually-hidden;
+      @include visually-hidden;
     }
   }
 
@@ -152,11 +152,18 @@ $sidebar-width: 240px;
     border: 1px solid palette(gray, medium-light);
     border-spacing: 0;
     width: 100%;
+    max-width: 100%;
+    overflow: scroll;
   }
   thead {
     background-color: palette(gray, light);
   }
   th, td {
+    @include small-screen {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
     &:not(:last-child) {
       border-right: 1px solid palette(gray, medium-light);
     }

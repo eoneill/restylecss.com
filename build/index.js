@@ -20,6 +20,12 @@ module.exports = function(rootDir) {
 
   new Metalsmith(rootDir)
     .metadata(config)
+    .use(plugins.copy({
+      pattern: "root/**/*",
+      directory: "./",
+      move: true
+    }))
+    .use(plugins.debug())
     .use(plugins.uuid())
     .use(config.isServer && plugins.watch({
       paths: {

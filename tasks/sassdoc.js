@@ -72,7 +72,7 @@ module.exports = function(gulp, depends, options) {
               title: "eyeglass-restyle",
               homepage: "/"
             }),
-            shortcutIcon: "./src/favicon-32x32.png"
+            shortcutIcon: "./src/root/favicon-32x32.png"
           });
 
           stream.promise.then(resolve);

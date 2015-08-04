@@ -117,9 +117,6 @@ $sidebar-width: 240px;
   thead {
     background-color: palette(gray, light);
   }
-  tr:not(:last-child) {
-    border-bottom: 1px solid palette(gray, medium-light);
-  }
   th, td {
     &:not(:last-child) {
       border-right: 1px solid palette(gray, medium-light);
@@ -127,6 +124,16 @@ $sidebar-width: 240px;
     padding: 10px 20px;
     code {
       white-space: pre;
+    }
+  }
+  tr:not(:last-child) {
+    th, td {
+      border-bottom: 1px solid palette(gray, medium-light);
+    }
+  }
+  tr:nth-child(even) {
+    td {
+      background-color: lighten(palette(gray, lighter), 2%);
     }
   }
 

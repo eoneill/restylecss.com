@@ -28,6 +28,7 @@ $sidebar-width: 240px;
     padding: 40px 20px;
     @include small-screen {
       @include flex-reset;
+      padding: 5px;
     }
   };
 

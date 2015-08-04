@@ -1,0 +1,3 @@
+{{#each scripts as |script|}}
+<script src="{{link-js script}}" {{#if async}}async{{/if}}></script>
+{{/each}}

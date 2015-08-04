@@ -1,0 +1,1 @@
+{{>scripts scripts=site.scripts async=true}}

@@ -19,7 +19,7 @@ Below you'll find a list of supported configuration options.
 
 | config name | description |
 | :----------- | :----------- |
-| `state-mappings` | The mapping of state identifiers to state selectors. See <!--TODO[States]({{link "documentation/states"}}) and--> [`restyle-add-state`]({{link "api/#function-restyle-add-state"}}). |
+| `state-mappings` | The mapping of state identifiers to state selectors. See <!--TODO[States]({{link "documentation/states"}}) and--> [`restyle-add-state`]({{api "restyle-add-state" type="function"}}). |
 
 
 ## `restyle-config`
@@ -91,5 +91,5 @@ $my-config-option: restyle-config(my-option);
 
 
 
-[restyle-config-function]: {{link "api/#function-restyle-config"}}
-[restyle-config-mixin]: {{link "api/#mixin-restyle-config"}}
+[restyle-config-function]: {{api "restyle-config" type="function"}}
+[restyle-config-mixin]: {{api "restyle-config" type="mixin"}}

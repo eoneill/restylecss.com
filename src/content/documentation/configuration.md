@@ -89,6 +89,9 @@ $config: restyle-config();
 $my-config-option: restyle-config(my-option);
 ```
 
+## Up next
+
+Now that you've got reSTYLE working and configured, let's find out [why UI patterns are so powerful]({{link "documentation/what-are-ui-patterns"}}).
 
 
 [restyle-config-function]: {{api "restyle-config" type="function"}}

@@ -168,7 +168,11 @@ $sidebar-width: 240px;
     }
     &:not(:last-child) {
       border-right: 1px solid palette(gray, medium-light);
+      @include small-screen {
+        border-right: none;
+      }
     }
+
     padding: 10px 20px;
     code {
       white-space: pre;

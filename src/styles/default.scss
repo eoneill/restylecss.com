@@ -136,6 +136,7 @@ $sidebar-width: 240px;
   pre code {
     @include restyle(block code) {
       overflow: auto;
+      max-width: 100%;
     };
   }
 

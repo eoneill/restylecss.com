@@ -107,8 +107,9 @@ module.exports = function(rootDir) {
     // use handlebars for layout
     .use(plugins.templateToLayout())  // must happen AFTER #tags, which uses the `template` key instead of `layout`
     .use(plugins.layouts({
-      engine: "handlebars"
-      // TODO - need to fix this for metalsmith-layouts 1.3.1
+      engine: "handlebars",
+      pattern: "**/*.{html,xml}",
+      default: "empty.hbt"
     }))
 
     // this can happen whenever

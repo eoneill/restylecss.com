@@ -107,9 +107,7 @@ module.exports = function(rootDir) {
     // use handlebars for layout
     .use(plugins.templateToLayout())  // must happen AFTER #tags, which uses the `template` key instead of `layout`
     .use(plugins.layouts({
-      engine: "handlebars",
-      pattern: "**/*.{html,xml}",
-      default: "empty.hbt"
+      engine: "handlebars"
     }))
 
     // this can happen whenever

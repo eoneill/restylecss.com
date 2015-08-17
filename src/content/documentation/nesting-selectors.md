@@ -3,14 +3,14 @@ title: Nesting Selectors
 topic: Defining Patterns
 tags: restyle, selectors
 layout: default.hbt
-date: 2015-07-20
+date: 2015-08-17
 draft: true
 order: 1010
 ---
 
 ## Nesting Selectors
 
-reSTYLE provides you with the ability to compose intuitive and semantic UI patterns that are decoupled from the specific selector hierarchy often found in complex stylesheets. However, UI component authors might need the flexibility to enforce some rigidity, or to work around existing global selectors within their site that would otherwise be difficult to dissociate.
+reSTYLE provides you with the ability to compose intuitive and semantic UI patterns that are decoupled from the specific selector hierarchy often found in complex stylesheets. However, pattern authors might need the flexibility to enforce some rigidity, or to work around existing global selectors within their site that would otherwise be difficult to dissociate.
 
 Take this example output from a button nested within a button group in [Bootstrap](http://getbootstrap.com/components/#btn-groups):
 
@@ -26,7 +26,7 @@ Take this example output from a button nested within a button group in [Bootstra
 
 ```
 
-You can use Sass syntax within your restyle UI pattern to accomplish this. Simply wrap your selector in quotes, and you're good to go:
+You can use Sass syntax within your reSTYLE UI pattern to accomplish this. Simply wrap your selector in quotes, and you're good to go:
 
 ```scss
 @include restyle-define(button, (

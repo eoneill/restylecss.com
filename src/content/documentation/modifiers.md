@@ -58,7 +58,7 @@ pattern. It might be for a size, a level of importance, or a visual style.
 A modifier can precede a pattern name or it can come after. Preceding modifiers
 are usually single words (e.g. `small`) and commonly adjectives. Trailing
 modifiers are usually short phrases (e.g. `with a tooltip`, `without a title`)
-and are often used to express an association with another UI element or a
+and are often used to express an association with another UI pattern or a
 particular state of the element the pattern is applied to.
 
 When defining a pattern, you list its modifiers under the key
@@ -66,7 +66,7 @@ When defining a pattern, you list its modifiers under the key
 
 ```scss
 @include restyle-define(button, (
-  ...default styles...
+  // ...default styles...
 
   '@restyle.modifiers': (
     small: (
@@ -104,10 +104,10 @@ used when referring to an ancestor.
 
 ```scss
 @include restyle-define(button, (
-  ...default styles...
+  // ...default styles...
 
   '@restyle.modifiers': (
-    ...
+    // ...
     'in an alert': (
       display: block
     ),
@@ -133,13 +133,13 @@ your `button` styles if you need to.
 
 ```scss
 @include restyle-define(button, (
-  ...default styles...
+  // ...default styles...
 
   '@restyle.modifiers': (
     small: (
-      ...
+      // ...
     ),
-    ...
+    // ...
     'in a modal dialog with a header': (
       display: block
     )
@@ -154,25 +154,25 @@ what was requested. So our example of `in a modal dialog with a header` in the
 dialog` from a pattern definition.
 
 If you provide multiple modifier definitions that match a context modifier,
-reSTYLE will merge their styles, with the last definition defined winning when
-multiple definitions define the same property.
+reSTYLE will merge their styles, with the last definition defined taking
+precedence when multiple definitions define the same property.
 
 ```scss
 @include restyle-define(button, (
-  ...default styles...
+  // ...default styles...
 
   '@restyle.modifiers': (
     // All of these will match for 'in a modal dialog with a header'
     'in a dialog': (
-      ...
+      // ...
       color: #000
     ),
     'in a modal dialog': (
-      ...
+      // ...
       color: #fff
     ),
     'in a modal dialog with a header': (
-      ...
+      // ...
       color: #333 // This `color` wins.
     )
   )
@@ -195,7 +195,7 @@ precedence approach.
 
 ```scss
 @include restyle-define(button, (
-  ...default styles...
+  // ...default styles...
 
   '@restyle.modifiers': (
     small: (
@@ -213,19 +213,18 @@ precedence approach.
 ));
 ```
 
-You can also specify specific styles that you want to apply for a compound
-modifier.
+You can also define styles to be applied for a specific compound modifier.
 
 ```scss
 @include restyle-define(button, (
-  ...default styles...
+  // ...default styles...
 
   '@restyle.modifiers': (
     small: (
-      ...
+      // ...
     ),
     primary: (
-      ...
+      // ...
     ),
     'small primary': (
       font-size: 95%
@@ -235,10 +234,13 @@ modifier.
 ```
 
 Between compound modifiers and context modifiers, reSTYLE empowers you to
-compose your UI elements using mixtures of variations and to compose larger
-patterns out of smaller ones through specializing component patterns for
-specific contexts.
+compose your UI patterns using flexible language and to compose larger patterns
+out of smaller ones through specializing component patterns for specific
+contexts.
 
+<!--
+TODO: Uncomment when states page is ready.
 ## Up Next
 
 Learn about [reSTYLE states]({{link "documentation/states"}}).
+-->

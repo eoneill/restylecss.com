@@ -4,7 +4,7 @@ topic: Defining Patterns
 tags: restyle, selectors
 layout: default.hbt
 date: 2015-08-17
-draft: true
+draft: false
 order: 1010
 ---
 

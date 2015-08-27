@@ -1,0 +1,116 @@
+<!DOCTYPE html><html class=no-js><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1"><title>Modifiers | reSTYLE - UI Patterns. For Sass.</title><link href=//www.restylecss.com/styles/default.css rel="stylesheet"><link rel=canonical href="//www.restylecss.com/documentation/modifiers"><meta property=og:url content="//www.restylecss.com/documentation/modifiers"><meta property=og:site_name content="reSTYLE"><meta property=og:title content="Modifiers | reSTYLE"><meta property=og:type content="Modifiers | reSTYLE"><meta property=og:description content="When you create a UI pattern with reSTYLE, you usually start with a set of
+  default styles."><meta name=description content="When you create a UI pattern with reSTYLE, you usually start with a set of
+  default styles."><link rel=apple-touch-icon sizes=57x57 href="//www.restylecss.com/apple-icon-57x57.png"><link rel=apple-touch-icon sizes=60x60 href="//www.restylecss.com/apple-icon-60x60.png"><link rel=apple-touch-icon sizes=72x72 href="//www.restylecss.com/apple-icon-72x72.png"><link rel=apple-touch-icon sizes=76x76 href="//www.restylecss.com/apple-icon-76x76.png"><link rel=apple-touch-icon sizes=114x114 href="//www.restylecss.com/apple-icon-114x114.png"><link rel=apple-touch-icon sizes=120x120 href="//www.restylecss.com/apple-icon-120x120.png"><link rel=apple-touch-icon sizes=144x144 href="//www.restylecss.com/apple-icon-144x144.png"><link rel=apple-touch-icon sizes=152x152 href="//www.restylecss.com/apple-icon-152x152.png"><link rel=apple-touch-icon sizes=180x180 href="//www.restylecss.com/apple-icon-180x180.png"><link rel=icon type=image/png sizes=192x192 href="//www.restylecss.com/android-icon-192x192.png"><link rel=icon type=image/png sizes=16x16 href="//www.restylecss.com/favicon-16x16.png"><link rel=icon type=image/png sizes=32x32 href="//www.restylecss.com/favicon-32x32.png"><link rel=icon type=image/png sizes=96x96 href="//www.restylecss.com/favicon-96x96.png"><link rel=manifest href="//www.restylecss.com/manifest.json"><meta name=msapplication-TileImage content="//www.restylecss.com/ms-icon-144x144.png"><meta name=theme-color content="#3f3f3f"><meta name=msapplication-TileColor content="#3f3f3f"></head><body id=pageid_documentation_modifiers><header id=global-header><a class=brand href="//www.restylecss.com/">reSTYLE</a><h1>Modifiers</h1><nav id=global-nav><ul><li class=current><a href=//www.restylecss.com/documentation title="Read the docs!">Docs</a></li><li><a href=//www.restylecss.com/api target=_blank title="API documentation">API</a></li><li><a href=//www.restylecss.com/github target=_blank title="View the source on GitHub">GitHub</a></li></ul></nav></header><div id=global-container><aside id=global-sidebar><button id=menu-toggle>...</button><div id=global-sidebar-content><h2>Getting Started</h2><a href=//www.restylecss.com/documentation/getting-started>Getting Started</a> <a href=//www.restylecss.com/documentation/configuration>Configuration</a> <a href=//www.restylecss.com/documentation/what-are-ui-patterns>What are UI Patterns?</a><h2>Defining Patterns</h2><a href=//www.restylecss.com/documentation/nesting-selectors>Nesting Selectors</a> <a href=//www.restylecss.com/documentation/modifiers class=active>Modifiers</a></div></aside><main id=global-main><div id=global-content><h2 id=introduction>Introduction</h2><p>When you create a UI pattern with reSTYLE, you usually start with a set of default styles.</p><pre><code class=lang-scss><span class=hljs-variable>@include</span> <span class=hljs-function>restyle-define</span>(button, (
+  <span class=hljs-attribute>background-color</span>: <span class=hljs-hexcolor>#4787ed</span>,
+  <span class=hljs-attribute>border</span>: <span class=hljs-number>1px</span> solid <span class=hljs-hexcolor>#3079ed</span>,
+  <span class=hljs-attribute>border-radius</span>: <span class=hljs-number>2px</span>,
+  <span class=hljs-attribute>color</span>: <span class=hljs-hexcolor>#fff</span>,
+  <span class=hljs-attribute>display</span>: inline-block,
+  <span class=hljs-attribute>font-weight</span>: bold,
+  <span class=hljs-attribute>padding</span>: <span class=hljs-number>5px</span> <span class=hljs-number>10px</span>,
+  <span class=hljs-attribute>text-align</span>: center,
+  <span class=hljs-attribute>vertical-align</span>: middle
+));
+</code></pre><p>This gets your pattern off to a good start, but you’ll soon want to customize the pattern for various use cases. This is where reSTYLE modifiers come in. A <strong>Modifier</strong> is a word or short phrase that you specify along with your pattern when you include <code>restyle()</code>.</p><pre><code class=lang-scss><span class=hljs-class>.primary-btn</span> {
+  <span class=hljs-variable>@include</span> <span class=hljs-function>restyle</span>(primary button);
+}
+</code></pre><p>In the example above, <code>primary</code> is a modifier for the <code>button</code> pattern. This will allow you to add to and override the default styles for a <code>button</code> that will take effect when <code>primary</code> is specified.</p><p>Modifiers enable you to create variants of a pattern to specialize it for particular use cases (e.g. size, importance). Additionally, as we’ll see soon, certain modifier forms known as <strong>Context Modifiers</strong> allow you to customize your pattern based on the context it’s used in (e.g. dialog, sidebar).</p><p>Finally, modifiers provide your patterns a great deal of composability, empowering you to produce even more variations by combining existing ones.</p><h2 id=variant-modifiers>Variant Modifiers</h2><p>A <strong>Variant Modifier</strong> refers to a modifier that creates a new variant of a pattern. It might be for a size, a level of importance, or a visual style.</p><p>A modifier can precede a pattern name or it can come after. Preceding modifiers are usually single words (e.g. <code>small</code>) and commonly adjectives. Trailing modifiers are usually short phrases (e.g. <code>with a tooltip</code>, <code>without a title</code>) and are often used to express an association with another UI pattern or a particular state of the element the pattern is applied to.</p><p>When defining a pattern, you list its modifiers under the key <code>restyle-modifiers</code>.</p><pre><code class=lang-scss><span class=hljs-variable>@include</span> <span class=hljs-function>restyle-define</span>(button, (
+  <span class=hljs-comment>// ...default styles...</span>
+
+  <span class=hljs-attribute>restyle-modifiers</span>: (
+    <span class=hljs-attribute>small</span>: (
+      <span class=hljs-attribute>font-size</span>: <span class=hljs-number>90%</span>,
+      <span class=hljs-attribute>font-weight</span>: normal,
+      <span class=hljs-attribute>padding</span>: <span class=hljs-number>3px</span> <span class=hljs-number>7px</span>
+    ),
+    <span class=hljs-string>'with a tooltip'</span>: (
+      <span class=hljs-attribute>position</span>: relative
+    )
+  )
+));
+</code></pre><p>Then the modifiers will be available when invoking <code>restyle()</code>.</p><pre><code class=lang-scss><span class=hljs-class>.like-btn</span> {
+  <span class=hljs-variable>@include</span> <span class=hljs-function>restyle</span>(small button);
+}
+
+<span class=hljs-class>.contact-btn</span> {
+  <span class=hljs-variable>@include</span> <span class=hljs-function>restyle</span>(button with a tooltip);
+}
+</code></pre><h2 id=context-modifiers>Context Modifiers</h2><p>As mentioned, there are a couple modifier forms that create context modifiers and are used to style a pattern based on the <em>context</em> (i.e. the containing UI element) of the element to which it is applied. Specifically, reSTYLE recognizes trailing modifiers beginning with <code>in</code> or <code>within</code> as context modifiers. Conventionally, <code>in</code> is used when referring to a direct parent and <code>within</code> is used when referring to an ancestor.</p><pre><code class=lang-scss><span class=hljs-variable>@include</span> <span class=hljs-function>restyle-define</span>(button, (
+  <span class=hljs-comment>// ...default styles...</span>
+
+  <span class=hljs-attribute>restyle-modifiers</span>: (
+    <span class=hljs-comment>// ...</span>
+    <span class=hljs-string>'in an alert'</span>: (
+      <span class=hljs-attribute>display</span>: block
+    ),
+    <span class=hljs-string>'within a toolbar'</span>: (
+      <span class=hljs-attribute>margin-right</span>: <span class=hljs-number>15px</span>
+    )
+  )
+));
+</code></pre><p>Note that a context modifier not only specifies the context for which you’re specializing your pattern, but also changes the pattern to which additional modifiers will apply. Consider this <code>restyle()</code> invocation:</p><pre><code class=lang-scss><span class=hljs-constant>@include</span> restyle(small button <span class=hljs-keyword>in</span> a modal dialog <span class=hljs-keyword>with</span> a header)<span class=hljs-comment>;</span>
+</code></pre><p>The <code>small</code> modifier will apply to <code>button</code>, while <code>modal</code> and <code>with a header</code> will apply to <code>dialog</code>. This is because <code>in a...</code> has changed the modifier target to <code>dialog</code>. Now you can target a very specific variant of a <code>dialog</code> in your <code>button</code> styles if you need to.</p><pre><code class=lang-scss><span class=hljs-variable>@include</span> <span class=hljs-function>restyle-define</span>(button, (
+  <span class=hljs-comment>// ...default styles...</span>
+
+  <span class=hljs-attribute>restyle-modifiers</span>: (
+    <span class=hljs-attribute>small</span>: (
+      <span class=hljs-comment>// ...</span>
+    ),
+    <span class=hljs-comment>// ...</span>
+    <span class=hljs-string>'in a modal dialog with a header'</span>: (
+      <span class=hljs-attribute>display</span>: block
+    )
+  )
+));
+</code></pre><p>Additionally, reSTYLE is flexible enough to match a more generic context modifier from your pattern definition if you don’t provide one as specific as what was requested. So our example of <code>in a modal dialog with a header</code> in the <code>restyle()</code> include call could also match <code>in a modal dialog</code> or just <code>in a dialog</code> from a pattern definition.</p><p>If you provide multiple modifier definitions that match a context modifier, reSTYLE will merge their styles, with the last definition defined taking precedence when multiple definitions define the same property.</p><pre><code class=lang-scss><span class=hljs-variable>@include</span> <span class=hljs-function>restyle-define</span>(button, (
+  <span class=hljs-comment>// ...default styles...</span>
+
+  <span class=hljs-attribute>restyle-modifiers</span>: (
+    <span class=hljs-comment>// All of these will match for 'in a modal dialog with a header'</span>
+    <span class=hljs-string>'in a dialog'</span>: (
+      <span class=hljs-comment>// ...</span>
+      <span class=hljs-attribute>color</span>: <span class=hljs-hexcolor>#000</span>
+    ),
+    <span class=hljs-string>'in a modal dialog'</span>: (
+      <span class=hljs-comment>// ...</span>
+      <span class=hljs-attribute>color</span>: <span class=hljs-hexcolor>#fff</span>
+    ),
+    <span class=hljs-string>'in a modal dialog with a header'</span>: (
+      <span class=hljs-comment>// ...</span>
+      <span class=hljs-attribute>color</span>: <span class=hljs-hexcolor>#333</span> <span class=hljs-comment>// This `color` wins.</span>
+    )
+  )
+));
+</code></pre><h2 id=composability>Composability</h2><p>You can compose modifiers in your <code>restyle()</code> calls to produce more pattern style variations. Composition of variant modifiers works the same way as it does with context modifiers. Let’s say you have a modifier definition for <code>primary button</code> and one for <code>small button</code>. You can ask <code>restyle()</code> for a <code>small primary button</code> when invoking your <code>button</code> pattern. You can think of <code>small primary</code> as a <strong>Compound Modifier</strong>.</p><p>If you don’t provide a modifier definition for <code>small primary</code> but do define <code>small</code> and <code>primary</code> separately, reSTYLE will figure out the styles for you by merging the two style definitions in a top-down, last definition taking precedence approach.</p><pre><code class=lang-scss><span class=hljs-variable>@include</span> <span class=hljs-function>restyle-define</span>(button, (
+  <span class=hljs-comment>// ...default styles...</span>
+
+  <span class=hljs-attribute>restyle-modifiers</span>: (
+    <span class=hljs-attribute>small</span>: (
+      <span class=hljs-attribute>font-size</span>: <span class=hljs-number>90%</span>,
+      <span class=hljs-attribute>font-weight</span>: normal,
+      <span class=hljs-attribute>padding</span>: <span class=hljs-number>3px</span> <span class=hljs-number>7px</span>
+    ),
+    <span class=hljs-attribute>primary</span>: (
+      <span class=hljs-attribute>background-color</span>: <span class=hljs-hexcolor>#0033cc</span>,
+      <span class=hljs-attribute>border-color</span>: <span class=hljs-hexcolor>#0033cc</span>,
+      <span class=hljs-attribute>color</span>: <span class=hljs-hexcolor>#fff</span>,
+      <span class=hljs-attribute>font-weight</span>: bold
+    )
+  )
+));
+</code></pre><p>You can also define styles to be applied for a specific compound modifier.</p><pre><code class=lang-scss><span class=hljs-variable>@include</span> <span class=hljs-function>restyle-define</span>(button, (
+  <span class=hljs-comment>// ...default styles...</span>
+
+  <span class=hljs-attribute>restyle-modifiers</span>: (
+    <span class=hljs-attribute>small</span>: (
+      <span class=hljs-comment>// ...</span>
+    ),
+    <span class=hljs-attribute>primary</span>: (
+      <span class=hljs-comment>// ...</span>
+    ),
+    <span class=hljs-string>'small primary'</span>: (
+      <span class=hljs-attribute>font-size</span>: <span class=hljs-number>95%</span>
+    )
+  )
+));
+</code></pre><p>Between compound modifiers and context modifiers, reSTYLE empowers you to compose your UI patterns using flexible language and to compose larger patterns out of smaller ones through specializing component patterns for specific contexts.</p><ul class=page-tags><li class=tag><a href=//www.restylecss.com/topics/restyle>restyle</a></li><li class=tag><a href=//www.restylecss.com/topics/modifiers>modifiers</a></li><li class=tag><a href=//www.restylecss.com/topics/special-properties>special properties</a></li></ul></div></main></div><footer id=global-footer><div><p class=copyright><a href=http://engineering.linkedin.com target=_blank><span class=holder>LinkedIn Corporation</span> &copy; <span class=year>2015</span></a></p><p class=badges><a href=https://github.com/eoneill/eyeglass-restyle/fork target=_blank><img src="//img.shields.io/github/forks/eoneill/eyeglass-restyle.svg?style=flat-square" class=badge alt="Forks on GitHub"></a> <a href="https://github.com/eoneill/eyeglass-restyle/" target=_blank><img src="//img.shields.io/github/stars/eoneill/eyeglass-restyle.svg?style=flat-square" class=badge alt="Stars on GitHub"></a> <a href=https://github.com/eoneill/eyeglass-restyle/issues target=_blank><img src="//img.shields.io/github/issues-raw/eoneill/eyeglass-restyle.svg?style=flat-square" class=badge alt="Issues on GitHub"></a> <a href=https://travis-ci.org/eoneill/eyeglass-restyle target=_blank><img src="//img.shields.io/travis/eoneill/eyeglass-restyle.svg?style=flat-square" class=badge alt="Build Status"></a> <a href=https://www.npmjs.com/package/eyeglass-restyle target=_blank><img src="//img.shields.io/npm/v/eyeglass-restyle.svg?style=flat-square" class=badge alt="Version"></a> <a href=https://github.com/eoneill/eyeglass-restyle/blob/master/LICENSE target=_blank><img src="//img.shields.io/npm/l/eyeglass-restyle.svg?style=flat-square" class=badge alt="License"></a></p></div></footer><script src=//www.restylecss.com/scripts/default.js></script></body></html>

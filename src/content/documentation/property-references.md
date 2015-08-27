@@ -11,8 +11,8 @@ order: 1040
 TODO...
 
 Discuss:
-- `@this.X`
-- `@root.X`
-- `@parent.X`
+- `this(X)`
+- `root(X)`
+- `parent(X)`
 - differences
 - contexts

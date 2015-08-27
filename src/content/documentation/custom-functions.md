@@ -12,5 +12,5 @@ TODO...
 
 Discuss:
 
-- `@restyle.function`
+- `restyle-function()`
 - why you would use a custom function

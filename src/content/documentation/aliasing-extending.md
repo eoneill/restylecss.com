@@ -12,9 +12,9 @@ order: 1999
 TODO...
 
 Discuss:
-- `@restyle.extends`
-- `@restyle.alias`
-- `@restyle.inherits`
-- recursive `@restyle` (invoking `restyle` within another definition)
+- `restyle-extends`
+- `restyle-alias`
+- `restyle-inherits`
+- recursive `restyle` (invoking `restyle` within another definition)
 - differences between all of these
 - when to use which one

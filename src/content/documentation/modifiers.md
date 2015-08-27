@@ -62,13 +62,13 @@ and are often used to express an association with another UI pattern or a
 particular state of the element the pattern is applied to.
 
 When defining a pattern, you list its modifiers under the key
-`'@restyle.modifiers'`.
+`restyle-modifiers`.
 
 ```scss
 @include restyle-define(button, (
   // ...default styles...
 
-  '@restyle.modifiers': (
+  restyle-modifiers: (
     small: (
       font-size: 90%,
       font-weight: normal,
@@ -106,7 +106,7 @@ used when referring to an ancestor.
 @include restyle-define(button, (
   // ...default styles...
 
-  '@restyle.modifiers': (
+  restyle-modifiers: (
     // ...
     'in an alert': (
       display: block
@@ -135,7 +135,7 @@ your `button` styles if you need to.
 @include restyle-define(button, (
   // ...default styles...
 
-  '@restyle.modifiers': (
+  restyle-modifiers: (
     small: (
       // ...
     ),
@@ -161,7 +161,7 @@ precedence when multiple definitions define the same property.
 @include restyle-define(button, (
   // ...default styles...
 
-  '@restyle.modifiers': (
+  restyle-modifiers: (
     // All of these will match for 'in a modal dialog with a header'
     'in a dialog': (
       // ...
@@ -197,7 +197,7 @@ precedence approach.
 @include restyle-define(button, (
   // ...default styles...
 
-  '@restyle.modifiers': (
+  restyle-modifiers: (
     small: (
       font-size: 90%,
       font-weight: normal,
@@ -219,7 +219,7 @@ You can also define styles to be applied for a specific compound modifier.
 @include restyle-define(button, (
   // ...default styles...
 
-  '@restyle.modifiers': (
+  restyle-modifiers: (
     small: (
       // ...
     ),

@@ -12,6 +12,5 @@ order: 1050
 TODO...
 
 Discuss:
-- `@restyle.var`
-- `@var`
+- `restyle-var()`
 - lazy evaluation

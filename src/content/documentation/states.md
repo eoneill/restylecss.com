@@ -11,6 +11,6 @@ order: 1030
 TODO...
 
 Discuss:
-- `@restyle.states`
+- `restyle-states`
 - `restyle-add-state` / `restyle-config(state-mappings, ...)`
 - difference between states and modifiers

@@ -60,7 +60,8 @@ var config = {
   today: Date.now(),
   dest: "./tmp/dist",
   documentedVersions: [
-    "0.1.8"
+    "0.1.8",
+    "0.2.4"
   ],
 
   environments: {

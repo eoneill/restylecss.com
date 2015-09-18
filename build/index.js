@@ -134,7 +134,7 @@ module.exports = function(rootDir) {
     // this is all post-process stuff, which should happen at the very end
     .use(config.isProd && plugins.htmlMinifier() || noop)
     .use(config.isProd && plugins.uglify() || noop)
-    .use(config.isServer && plugins.serve() || noop)
+    .use(config.isServer && plugins.serve({}) || noop)
     .destination(config.dest)
     .build(function(err) {
       if (err) {

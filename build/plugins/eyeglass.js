@@ -12,7 +12,8 @@ module.exports = function(options) {
   }
 
   // allow custom engines to be passed in
-  var eyeglass = (options.engines && options.engines.eyeglass) || require("eyeglass");
+  var Eyeglass = (options.engines && options.engines.eyeglass) || require("eyeglass");
+  Eyeglass = Eyeglass.Eyeglass || Eyeglass;
 
   // return the metalsmith-sass interface
   return function(files, metalsmith, done) {
@@ -25,7 +26,11 @@ module.exports = function(options) {
       }
     });
 
+    var eyeglass = new Eyeglass(options);
+    // TODO - remove this once import-once is working correctly
+    eyeglass.enableImportOnce = false;
+
     // hand it off to metalsmith-sass
-    sass(eyeglass.decorate(options)).apply(sass, arguments);
+    sass(eyeglass.sassOptions()).apply(sass, arguments);
   };
 };

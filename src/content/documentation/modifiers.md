@@ -238,9 +238,6 @@ compose your UI patterns using flexible language and to compose larger patterns
 out of smaller ones through specializing component patterns for specific
 contexts.
 
-<!--
-TODO: Uncomment when states page is ready.
 ## Up Next
 
 Learn about [reSTYLE states]({{link "documentation/states"}}).
--->

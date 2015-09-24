@@ -31,9 +31,7 @@ Here's a quick example of consuming a **button** pattern in CSS:
 
 This makes your code very easy and intuitive to read and understand. Anyone looking at this code can quickly determine that the `.purchase` element will look like a **button**.
 
-<!--TODO
 Jump ahead to learn more about [defining UI patterns]({{link "documentation/defining-patterns"}}).
--->
 
 ### Adding variants
 
@@ -79,9 +77,7 @@ Imagine you have a special use case where you need a **button in a modal** to lo
 
 Well that was simple!
 
-<!--TODO
 Learn more about [modifiers]({{link "documentation/modifiers"}}).
--->
 
 ### Stateful patterns
 
@@ -101,12 +97,8 @@ It might also have a `disabled` state. Or possibly any other stateful descriptio
 
 reSTYLE abstracts this complexity from the developer. Our button pattern definition can easily define all these states and more, without ever having to change the simple `restyle(button)` interface.
 
-<!--TODO
 Learn more about [states]({{link "documentation/states"}}).
--->
 
-<!--
 ## Up next
 
 Deep dive into how [grammar really works in reSTYLE]({{link "documentation/understanding-grammar"}}).
--->

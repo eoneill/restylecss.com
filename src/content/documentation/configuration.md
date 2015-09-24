@@ -20,7 +20,7 @@ Below you'll find a list of supported configuration options.
 | config name | description |
 | :----------- | :----------- |
 | `state-mappings` | The mapping of state identifiers to state selectors. See <!--TODO[States]({{link "documentation/states"}}) and--> [`restyle-add-state`]({{api "restyle-add-state" type="function"}}). |
-
+| `log` | Enable/disable logging and debug info. See [debugging]({{link "documentation/debugging"}}). |
 
 ## `restyle-config`
 

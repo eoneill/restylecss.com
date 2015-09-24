@@ -1,0 +1,65 @@
+<!DOCTYPE html><html class=no-js><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1"><title>States | reSTYLE - UI Patterns. For Sass.</title><link href=//www.restylecss.com/styles/default.css rel="stylesheet"><link rel=canonical href="//www.restylecss.com/documentation/states"><meta property=og:url content="//www.restylecss.com/documentation/states"><meta property=og:site_name content="reSTYLE"><meta property=og:title content="States | reSTYLE"><meta property=og:type content="States | reSTYLE"><meta property=og:description content="State definitions allow you to express unique variations of UI patterns based on the element’s current status. Examples of states include hover, focus,…"><meta name=description content="State definitions allow you to express unique variations of UI patterns based on the element’s current status. Examples of states include hover, focus,…"><link rel=apple-touch-icon sizes=57x57 href="//www.restylecss.com/apple-icon-57x57.png"><link rel=apple-touch-icon sizes=60x60 href="//www.restylecss.com/apple-icon-60x60.png"><link rel=apple-touch-icon sizes=72x72 href="//www.restylecss.com/apple-icon-72x72.png"><link rel=apple-touch-icon sizes=76x76 href="//www.restylecss.com/apple-icon-76x76.png"><link rel=apple-touch-icon sizes=114x114 href="//www.restylecss.com/apple-icon-114x114.png"><link rel=apple-touch-icon sizes=120x120 href="//www.restylecss.com/apple-icon-120x120.png"><link rel=apple-touch-icon sizes=144x144 href="//www.restylecss.com/apple-icon-144x144.png"><link rel=apple-touch-icon sizes=152x152 href="//www.restylecss.com/apple-icon-152x152.png"><link rel=apple-touch-icon sizes=180x180 href="//www.restylecss.com/apple-icon-180x180.png"><link rel=icon type=image/png sizes=192x192 href="//www.restylecss.com/android-icon-192x192.png"><link rel=icon type=image/png sizes=16x16 href="//www.restylecss.com/favicon-16x16.png"><link rel=icon type=image/png sizes=32x32 href="//www.restylecss.com/favicon-32x32.png"><link rel=icon type=image/png sizes=96x96 href="//www.restylecss.com/favicon-96x96.png"><link rel=manifest href="//www.restylecss.com/manifest.json"><meta name=msapplication-TileImage content="//www.restylecss.com/ms-icon-144x144.png"><meta name=theme-color content="#3f3f3f"><meta name=msapplication-TileColor content="#3f3f3f"></head><body id=pageid_documentation_states><header id=global-header><a class=brand href="//www.restylecss.com/">reSTYLE</a><h1>States</h1><nav id=global-nav><ul><li><a href=//www.restylecss.com/documentation title="Read the docs!">Docs</a></li><li><a href=//www.restylecss.com/api target=_blank title="API documentation">API</a></li><li><a href=//www.restylecss.com/github target=_blank title="View the source on GitHub">GitHub</a></li></ul></nav></header><div id=global-container><aside id=global-sidebar><button id=menu-toggle>...</button><div id=global-sidebar-content><h2>Getting Started</h2><a href=//www.restylecss.com/documentation/getting-started>Getting Started</a> <a href=//www.restylecss.com/documentation/configuration>Configuration</a> <a href=//www.restylecss.com/documentation/what-are-ui-patterns>What are UI Patterns?</a> <a href=//www.restylecss.com/documentation/understanding-grammar>Understanding Grammar</a><h2>Defining Patterns</h2><a href=//www.restylecss.com/documentation/defining-ui-patterns>Defining UI Patterns</a> <a href=//www.restylecss.com/documentation/nesting-selectors>Nesting Selectors</a> <a href=//www.restylecss.com/documentation/modifiers>Modifiers</a> <a href=//www.restylecss.com/documentation/states class=active>States</a> <a href=//www.restylecss.com/documentation/property-references>Property References</a><h2>Integration</h2><a href=//www.restylecss.com/documentation/noconflict>No Conflict Mode</a> <a href=//www.restylecss.com/documentation/debugging>Debugging</a></div></aside><main id=global-main><div id=global-content><h2 id=states>States</h2><p>State definitions allow you to express unique variations of UI patterns based on the element’s current status. Examples of states include <code>hover</code>, <code>focus</code>, <code>disabled</code>, and any other <em>stateful</em> descriptor.</p><p>You can easily add states to a UI pattern using the <code>restyle-states</code> or <code>restyle-state</code> keywords.</p><pre><code class=lang-scss><span class=hljs-variable>@include</span> <span class=hljs-function>restyle-define</span>(button, (
+  <span class=hljs-attribute>restyle-states</span>: (
+    <span class=hljs-attribute>hover</span>: (
+      <span class=hljs-attribute>color</span>: ...
+    ),
+    <span class=hljs-attribute>focus</span>: ( ... )
+  )
+));
+
+<span class=hljs-comment>// OR</span>
+
+<span class=hljs-variable>@include</span> <span class=hljs-function>restyle-define</span>(button, (
+  <span class=hljs-function>restyle-state</span>(hover): (
+    <span class=hljs-attribute>color</span>: ...
+  ),
+  <span class=hljs-function>restyle-state</span>(focus): ( ... )
+));
+</code></pre><p>When the UI pattern is invoked, these states will get output into the CSS as selectors.</p><h2 id=not-just-selectors>Not just selectors</h2><p>We previously talked about <a href=//www.restylecss.com/documentation/nesting-selectors>nesting selectors</a> in a definition, and you might be wondering why you wouldn’t just use those.</p><pre><code class=lang-scss><span class=hljs-at_rule>@<span class=hljs-keyword>include</span> <span class=hljs-function>restyle-define</span>(button, (
+  <span class=hljs-string>'&amp;:hover'</span>: ( ... ),
+  <span class=hljs-string>'&amp;:focus'</span>: ( ... )
+))</span>;
+</code></pre><p>That would work.</p><p>But, wait, states are a bit different.</p><p>Selectors are intended to represent specific hierarchical DOM order, while states represent that state of the element.</p><p>That is, the element’s <code>hover</code> state will not contain a <code>.hover</code> child.</p><p>This is important because the representation of states is highly dependent on the app architecture (e.g. framework) being used to attribute the state.</p><p>For example, you might use <code>jQuery</code> to add a <code>.hover</code> class to an element that doesn’t normally support the <code>:hover</code> state. Or maybe your app uses the convention of <code>.is-hovered</code></p><p>In this case, a selector would introduce a coupling between the application and your pattern library.</p><p>In reSTYLE, we work around this limitation by providing state <em>identifiers</em> and a way for the application owner to declare how to map the identifier to a selector that’s compatible with the application architecture.</p><p>So in our definition, we only ever refer to the state identifiers (<code>hover</code>, <code>focus</code>, etc).</p><h3 id=mapping-state-identifiers>Mapping state identifiers</h3><p>As an application owner, you will ultimately be responsible for making sure the state identifiers are mapped to appropriate selectors.</p><p>This is done using the <code>restyle-add-state</code> method:</p><pre><code class=lang-scss><span class=hljs-variable>@include</span> <span class=hljs-function>restyle-add-state</span>(hover, <span class=hljs-string>'&amp;:hover, .is-hovered'</span>);
+<span class=hljs-variable>@include</span> <span class=hljs-function>restyle-add-state</span>(focus, <span class=hljs-string>'&amp;:focus, .is-focused'</span>);
+
+<span class=hljs-comment>// OR</span>
+
+<span class=hljs-variable>@include</span> <span class=hljs-function>restyle-add-state</span>((
+  <span class=hljs-attribute>hover</span>: <span class=hljs-string>'&amp;:hover, .is-hovered'</span>,
+  <span class=hljs-attribute>focus</span>: <span class=hljs-string>'&amp;:focus, .is-focused'</span>
+));
+</code></pre><p>You can also define these mappings via the <code>restyle-config</code> method:</p><pre><code class=lang-scss><span class=hljs-variable>@include</span> <span class=hljs-function>restyle-config</span>(state-mappings, (
+  <span class=hljs-attribute>hover</span>: <span class=hljs-string>'&amp;:hover, .is-hovered'</span>,
+  <span class=hljs-attribute>focus</span>: <span class=hljs-string>'&amp;:focus, .is-focused'</span>
+));
+</code></pre><h2 id=states-aren-t-modifiers>States aren’t modifiers</h2><p>It’s also important to understand that states are <em>not</em> modifiers. Modifiers describe a concrete variation of the UI pattern. For example, a <code>small button</code>. With modifiers, the user must specifically request the modified variant. That is, they won’t get a <code>small button</code> simply by asking for a <code>button</code>.</p><p>With states however, like selectors, come along with the request without the user asking for them. If a <code>button</code> has a <code>hover</code> state, the user will get it when asking for a <code>button</code>.</p><p>Here’s a quick example to help demonstrate this.</p><pre><code class=lang-scss><span class=hljs-variable>@incude</span> <span class=hljs-function>restyle-define</span>(button, (
+  <span class=hljs-attribute>color</span>: blue,
+  <span class=hljs-function>restyle-modifier</span>(small): (
+    <span class=hljs-attribute>font-size</span>: <span class=hljs-number>75%</span>
+  ),
+  <span class=hljs-function>restyle-state</span>(hover): (
+    <span class=hljs-attribute>color</span>: green
+  )
+));
+
+<span class=hljs-class>.btn</span> {
+  <span class=hljs-variable>@include</span> <span class=hljs-function>restyle</span>(button);
+  <span class=hljs-keyword>&amp;</span><span class=hljs-class>.small</span> {
+    <span class=hljs-variable>@include</span> <span class=hljs-function>restyle</span>(small button);
+  }
+}
+</code></pre><p>will output…</p><pre><code class=lang-css><span class=hljs-class>.btn</span> <span class=hljs-rules>{
+  <span class=hljs-rule><span class=hljs-attribute>color</span>:<span class=hljs-value> blue</span></span>;
+}</span>
+<span class=hljs-rule><span class=hljs-attribute>.btn</span>:<span class=hljs-value>hover {
+  color: green</span></span>;
+}
+
+<span class=hljs-class>.btn</span><span class=hljs-class>.small</span> <span class=hljs-rules>{
+  <span class=hljs-rule><span class=hljs-attribute>color</span>:<span class=hljs-value> blue</span></span>;
+  <span class=hljs-rule><span class=hljs-attribute>font-size</span>:<span class=hljs-value> <span class=hljs-number>75%</span></span></span>;
+}</span>
+<span class=hljs-rule><span class=hljs-attribute>.btn.small</span>:<span class=hljs-value>hover {
+  color: green</span></span>;
+}
+</code></pre><ul class=page-tags><li class=tag><a href=//www.restylecss.com/topics/restyle>restyle</a></li><li class=tag><a href=//www.restylecss.com/topics/states>states</a></li><li class=tag><a href=//www.restylecss.com/topics/special-properties>special properties</a></li></ul></div></main></div><footer id=global-footer><div><p class=copyright><a href=http://engineering.linkedin.com target=_blank><span class=holder>LinkedIn Corporation</span> &copy; <span class=year>2015</span></a></p><p class=badges><a href=https://github.com/eoneill/eyeglass-restyle/fork target=_blank><img src=//img.shields.io/github/forks/eoneill/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="Forks on GitHub"></a> <a href="https://github.com/eoneill/eyeglass-restyle/" target=_blank><img src=//img.shields.io/github/stars/eoneill/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="Stars on GitHub"></a> <a href=https://github.com/eoneill/eyeglass-restyle/issues target=_blank><img src=//img.shields.io/github/issues-raw/eoneill/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="Issues on GitHub"></a> <a href=https://travis-ci.org/eoneill/eyeglass-restyle target=_blank><img src=//img.shields.io/travis/eoneill/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="Build Status"></a> <a href=https://www.npmjs.com/package/eyeglass-restyle target=_blank><img src=//img.shields.io/npm/v/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="Version"></a> <a href=https://github.com/eoneill/eyeglass-restyle/blob/master/LICENSE target=_blank><img src=//img.shields.io/npm/l/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="License"></a></p></div></footer><script src=//www.restylecss.com/scripts/default.js></script></body></html>

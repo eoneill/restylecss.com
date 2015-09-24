@@ -61,6 +61,16 @@
       <priority>0.7</priority>
     </url>
     <url>
+      <loc>http://www.restylecss.com/documentation/property-references</loc>
+        <lastmod>2015-09-23</lastmod>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>http://www.restylecss.com/documentation/states</loc>
+        <lastmod>2015-09-23</lastmod>
+      <priority>0.7</priority>
+    </url>
+    <url>
       <loc>http://www.restylecss.com/documentation/understanding-grammar</loc>
         <lastmod>2015-09-23</lastmod>
       <priority>0.7</priority>
@@ -116,7 +126,17 @@
       <priority>0.7</priority>
     </url>
     <url>
+      <loc>http://www.restylecss.com/topics/parent</loc>
+        <lastmod>2015-09-24</lastmod>
+      <priority>0.7</priority>
+    </url>
+    <url>
       <loc>http://www.restylecss.com/topics/patterns</loc>
+        <lastmod>2015-09-24</lastmod>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>http://www.restylecss.com/topics/referencing</loc>
         <lastmod>2015-09-24</lastmod>
       <priority>0.7</priority>
     </url>
@@ -136,12 +156,27 @@
       <priority>0.7</priority>
     </url>
     <url>
+      <loc>http://www.restylecss.com/topics/root</loc>
+        <lastmod>2015-09-24</lastmod>
+      <priority>0.7</priority>
+    </url>
+    <url>
       <loc>http://www.restylecss.com/topics/selectors</loc>
         <lastmod>2015-09-24</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/special-properties</loc>
+        <lastmod>2015-09-24</lastmod>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>http://www.restylecss.com/topics/states</loc>
+        <lastmod>2015-09-24</lastmod>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>http://www.restylecss.com/topics/this</loc>
         <lastmod>2015-09-24</lastmod>
       <priority>0.7</priority>
     </url>

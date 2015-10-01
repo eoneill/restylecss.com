@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
       <loc>http://www.restylecss.com/</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/api</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/api/v0.1.8</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/api/v0.2.4</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/documentation</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
@@ -48,6 +48,11 @@
     <url>
       <loc>http://www.restylecss.com/documentation/modifiers</loc>
         <lastmod>2015-08-13</lastmod>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>http://www.restylecss.com/documentation/namespaced-keys</loc>
+        <lastmod>2015-09-30</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
@@ -81,108 +86,118 @@
       <priority>0.7</priority>
     </url>
     <url>
+      <loc>http://www.restylecss.com/documentation/working-with-multiple-values</loc>
+        <lastmod>2015-09-30</lastmod>
+      <priority>0.7</priority>
+    </url>
+    <url>
       <loc>http://www.restylecss.com/examples</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/configuration</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/debug</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/getting-started</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/grammar</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/log</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/modifiers</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>http://www.restylecss.com/topics/multiple-values</loc>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/noconflict</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/parent</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/patterns</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/referencing</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/restyle</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/restyle-config</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/restyle-define</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/root</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/selectors</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/special-properties</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/states</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/this</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
     <url>
       <loc>http://www.restylecss.com/tutorials</loc>
-        <lastmod>2015-09-24</lastmod>
+        <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>
 </urlset>

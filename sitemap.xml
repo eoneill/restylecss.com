@@ -71,6 +71,11 @@
       <priority>0.7</priority>
     </url>
     <url>
+      <loc>http://www.restylecss.com/documentation/smart-content</loc>
+        <lastmod>2015-09-30</lastmod>
+      <priority>0.7</priority>
+    </url>
+    <url>
       <loc>http://www.restylecss.com/documentation/states</loc>
         <lastmod>2015-09-23</lastmod>
       <priority>0.7</priority>
@@ -177,6 +182,11 @@
     </url>
     <url>
       <loc>http://www.restylecss.com/topics/selectors</loc>
+        <lastmod>2015-10-01</lastmod>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>http://www.restylecss.com/topics/smart-content</loc>
         <lastmod>2015-10-01</lastmod>
       <priority>0.7</priority>
     </url>

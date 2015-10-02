@@ -61,7 +61,8 @@ var config = {
   dest: "./tmp/dist",
   documentedVersions: [
     "0.1.8",
-    "0.2.4"
+    "0.2.4",
+    "0.2.5"
   ],
 
   environments: {

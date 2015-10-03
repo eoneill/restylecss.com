@@ -131,14 +131,17 @@ module.exports = function(rootDir) {
       "/github": "https://github.com/" + config.site.git.account + "/" + config.site.git.repo
     }))
 
+    // check that all of our links are valid
+    .use(plugins.linkchecker({
+      cache: "./build/.linkchecker.cache",
+      base: "http://www.restylecss.com",
+      exclude: ["https://github.com/**/*/fork"],
+      reportOnly: config.isServer
+    }))
+
     // this is all post-process stuff, which should happen at the very end
     .use(config.isProd && plugins.htmlMinifier() || noop)
     .use(config.isProd && plugins.uglify() || noop)
-    .use(plugins.linkchecker({
-      cache: "./build/.linkchecker.cache",
-      base: /^(?:https?:)?\/\/(?:www\.)?restylecss\.com/,
-      exclude: ["https://github.com/**/*/fork"]
-    }))
     .use(config.isServer && plugins.serve({}) || noop)
     .destination(config.dest)
     .build(function(err) {

@@ -10,7 +10,7 @@
   "engines": {
     "node": ">=4.0"
   },
-  "homepage": "http://restylecss.com",
+  "homepage": "http://www.restylecss.com",
   "issues": "https://github.com/eoneill/restylecss.com/issues",
   "repository": "https://github.com/eoneill/restylecss.com.git",
   "author": "Eugene ONeill <oneill.eugene@gmail.com>",

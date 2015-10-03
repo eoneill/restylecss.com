@@ -80,6 +80,8 @@ module.exports = function(config) {
     }
   }
 
+  var allKnownFiles = [];
+
   return function(files, metalsmith, done) {
 
     var links = [];
@@ -87,6 +89,8 @@ module.exports = function(config) {
     var cachedLinks = readCache();
     var checkedLinks = merge({}, cachedLinks, config.override);
     var filenames = Object.keys(files);
+
+    allKnownFiles.push.apply(allKnownFiles, filenames);
 
     var linkableSelector = Object.keys(linkableTags).map(function(tag) {
       return tag + "[" + linkableTags[tag] + "]";
@@ -127,7 +131,7 @@ module.exports = function(config) {
     }
 
     function isFileMissing(file) {
-      return filenames.indexOf(file) === -1;
+      return allKnownFiles.indexOf(file) === -1;
     }
 
     function validateLocalLink(link, cb) {
@@ -164,7 +168,7 @@ module.exports = function(config) {
       var error;
 
       if (brokenLinks.length) {
-        message += "[linkchecker] The following links are broken:";
+        message += "[metalsmith-linkchecker] The following links are broken:";
         brokenLinks.forEach(function(link) {
           message += "\n  " + link.uri + "  (in " + link.file + ")";
         });

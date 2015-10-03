@@ -31,7 +31,7 @@ Here's a quick example of consuming a **button** pattern in CSS:
 
 This makes your code very easy and intuitive to read and understand. Anyone looking at this code can quickly determine that the `.purchase` element will look like a **button**.
 
-Jump ahead to learn more about [defining UI patterns]({{link "documentation/defining-patterns"}}).
+Jump ahead to learn more about [defining UI patterns]({{link "documentation/defining-ui-patterns"}}).
 
 ### Adding variants
 

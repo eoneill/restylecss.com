@@ -7,8 +7,8 @@
     "start": "./node_modules/.bin/gulp serve",
     "test": "./node_modules/.bin/gulp test"
   },
-  "engines" : {
-    "node" : ">=4.0"
+  "engines": {
+    "node": ">=4.0"
   },
   "homepage": "http://restylecss.com",
   "issues": "https://github.com/eoneill/restylecss.com/issues",
@@ -32,6 +32,7 @@
     "handlebars": "^4.0.3",
     "handlebars-helper-equal": "^1.0.0",
     "highlight.js": "^8.8.0",
+    "jsonfile": "^2.2.2",
     "load-metalsmith-plugins": "^0.1.1",
     "lodash.merge": "^3.3.2",
     "metalsmith": "^2.1.0",
@@ -60,6 +61,7 @@
     "node-sass": "^3.3.3",
     "node-uuid": "^1.4.3",
     "nodetree": "0.0.2",
+    "request": "^2.64.0",
     "restyle-theme-restylecss.com": "^0.0.17",
     "sassdoc": "^2.1.15",
     "wget-improved": "^1.1.1"

@@ -44,10 +44,12 @@ Still too much noise? We can look at the `time:grammar` logs:
 ```scss
 @include restyle-config(log, (
   define: true,
+
   time: (
     define: true,
     extend: true,
     grammar: true,
+    smart-content: true,
     styles: true,
     styles-from-grammar: true
   )

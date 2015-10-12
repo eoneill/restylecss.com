@@ -89,6 +89,20 @@ $config: restyle-config();
 $my-config-option: restyle-config(my-option);
 ```
 
+## Temporary config
+
+If you wish to only change the config temporarily, consider using the [`restyle-with-config`][restyle-with-config-mixin]. The mixin takes the same arguments as the `restyle-config` mixin, but only updates the global config for the scope of the mixin.
+
+```scss
+@import "restyle";
+
+@include restyle-with-config(...) {
+  // do stuff here with the new config
+}
+
+// the previous config is restored here
+```
+
 ## Up next
 
 Now that you've got reSTYLE working and configured, let's find out [why UI patterns are so powerful]({{link "documentation/what-are-ui-patterns"}}).
@@ -96,3 +110,4 @@ Now that you've got reSTYLE working and configured, let's find out [why UI patte
 
 [restyle-config-function]: {{api "restyle-config" type="function"}}
 [restyle-config-mixin]: {{api "restyle-config" type="mixin"}}
+[restyle-with-config-mixin]: {{api "restyle-config" type="mixin"}}

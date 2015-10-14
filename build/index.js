@@ -134,7 +134,7 @@ module.exports = function(rootDir) {
     // check that all of our links are valid
     .use(plugins.linkchecker({
       cache: "./build/.linkchecker.cache",
-      base: "http://www.restylecss.com",
+      base: /^(?:https?:)?\/\/(?:www\.)?restylecss\.com/,
       exclude: ["https://github.com/**/*/fork"],
       reportOnly: config.isServer
     }))

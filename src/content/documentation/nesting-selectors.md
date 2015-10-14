@@ -68,6 +68,4 @@ You can define selectors within other selectors for even more composability. Usi
 ));
 ```
 
-In general, we recommend against implementing an explicit selector hierarchy and suggest breaking down UI patterns into reusable components that leverage other core reSTYLE functionality like [modifiers]({{link "documentation/modifiers"}}) and [states]({{link "documentation/states"}}).
-
-<!--[variables]({{link "documentation/restyle-variables"}}),-->
+In general, we recommend against implementing an explicit selector hierarchy and suggest breaking down UI patterns into reusable components that leverage other core reSTYLE functionality like [modifiers]({{link "documentation/modifiers"}}), [states]({{link "documentation/states"}}), and [variables]({{link "documentation/restyle-variables"}}).

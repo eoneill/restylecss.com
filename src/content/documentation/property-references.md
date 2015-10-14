@@ -141,8 +141,6 @@ You can also chain `parent()` lookups:
 ));
 ```
 
-<!--
 ## Up next - variables
 
 Property references are pretty slick, but just wait until you check out [variables]({{link "documentation/restyle-variables"}}).
--->

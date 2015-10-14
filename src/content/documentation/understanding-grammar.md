@@ -68,9 +68,43 @@ Finally, we handle a few words that change the _placement_ or attribution. These
 
 For example `button with a shadow`.
 
-<!--
-TODO
+
 ### Adding custom grammar engines
 
-While the built-in grammar parser is quite robust, you may have a specific need to extend it. Here's a quick example of doing just that:
--->
+While the built-in grammar parser is quite robust, you may have a specific need to extend it. Here's a quick example of doing just that (in your build pipeline):
+
+```js
+var Eyeglass = require("eyeglass").Eyeglass;
+
+var eyeglass = new Eyeglass({
+  restyle: {
+    // grammarEngines takes an array of functions
+    grammarEngines: [function() {
+      ...
+    }]
+  }
+});
+```
+
+The custom grammar engine function will have access to `this.description` and `this.type`. `this.description` may either be `null` or an array of strings while `this.type` is a string. Any changes you make here should be applied back onto the properties.
+
+Here's an example of a custom grammar engine:
+
+```js
+function() {
+  this.type = "my-prefix-" + this.type;
+  if (this.description) {
+    this.description = this.description.filter(...);
+  }
+}
+```
+
+#### From an eyeglass module
+
+If you've authored a reSTYLE eyeglass module but don't have access to the build environment, you can still add grammar engines via the plugin interface. In your `eyeglass-exports.js` file, you'd do something like...
+
+```js
+module.exports = function(eyeglass, sass) {
+  eyeglass.options.restyle.addGrammarEngine(function() { ... });
+};
+```

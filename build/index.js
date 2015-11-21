@@ -1,5 +1,6 @@
 var Metalsmith = require("metalsmith");
 var Handlebars = require("handlebars");
+var path = require("path");
 var argv = require("minimist")(process.argv.slice(2), {
   alias: {
     env: "environment",
@@ -115,7 +116,8 @@ module.exports = function(rootDir) {
       outputStyle: config.isProd ? "compressed" : "expanded",
       root: rootDir,
       buildDir: "${source}/assets/",
-      assetsHttpPrefix: "assets"
+      assetsHttpPrefix: "assets",
+      includePaths: [path.resolve("node_modules/highlight.js/styles/")]
     }))
     // use auto-prefixer (must happen AFTER #eyeglass)
     .use(plugins.autoprefixer())

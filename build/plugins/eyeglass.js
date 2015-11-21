@@ -27,8 +27,6 @@ module.exports = function(options) {
     });
 
     var eyeglass = new Eyeglass(options);
-    // TODO - remove this once import-once is working correctly
-    eyeglass.enableImportOnce = false;
 
     // hand it off to metalsmith-sass
     sass(eyeglass.sassOptions()).apply(sass, arguments);

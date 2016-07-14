@@ -70,20 +70,16 @@ To work around this, we would use a custom function:
 ```scss
 @import "restyle";
 
-@at-root {
-  @function font-color-invert($color) {
-    @return (
-      font-color: invert($color)
-    );
-  }
-
-  @include restyle-define(example, (
-    color: black,
-    restyle-function(font-color-invert): this(color)
-  ));
+@function font-color-invert($color) {
+  @return (
+    font-color: invert($color)
+  );
 }
+
+@include restyle-define(example, (
+  color: black,
+  restyle-function(font-color-invert): this(color)
+));
 ```
 
 This will now work the way we intended.
-
-But what's with the `@at-root`, I hear you asking? `@at-root` creates a new scope in Sass, which we can take advantage of here to not leak our `font-color-invert` function into the global scope!

@@ -26,16 +26,14 @@
 ))</span>;
 </code></pre><p>The problem is that <code>this(color)</code> is lazy and won’t be evaluated at the time that <code>invert()</code> is invoked.</p><p>To work around this, we would use a custom function:</p><pre><code class=lang-scss><span class=hljs-at_rule>@import</span> <span class=hljs-string>"restyle"</span>;
 
-<span class=hljs-variable>@at-root</span> {
-  <span class=hljs-variable>@function</span> <span class=hljs-function>font-color-invert</span>($color) {
-    <span class=hljs-variable>@return</span> (
-      <span class=hljs-attribute>font-color</span>: <span class=hljs-function>invert</span>($color)
-    );
-  }
-
-  <span class=hljs-variable>@include</span> <span class=hljs-function>restyle-define</span>(example, (
-    <span class=hljs-attribute>color</span>: black,
-    <span class=hljs-function>restyle-function</span>(font-color-invert): <span class=hljs-function>this</span>(color)
-  ));
+<span class=hljs-variable>@function</span> <span class=hljs-function>font-color-invert</span>($color) {
+  <span class=hljs-variable>@return</span> (
+    <span class=hljs-attribute>font-color</span>: <span class=hljs-function>invert</span>($color)
+  );
 }
-</code></pre><p>This will now work the way we intended.</p><p>But what’s with the <code>@at-root</code>, I hear you asking? <code>@at-root</code> creates a new scope in Sass, which we can take advantage of here to not leak our <code>font-color-invert</code> function into the global scope!</p><ul class=page-tags><li class=tag><a href=//www.restylecss.com/topics/restyle>restyle</a></li><li class=tag><a href=//www.restylecss.com/topics/function>function</a></li><li class=tag><a href=//www.restylecss.com/topics/special-properties>special properties</a></li></ul></div></main></div><footer id=global-footer><div><p class=copyright><a href=http://engineering.linkedin.com target=_blank><span class=holder>LinkedIn Corporation</span> &copy; <span class=year>2015</span></a></p><p class=badges><a href=https://github.com/eoneill/eyeglass-restyle/fork target=_blank><img src=//img.shields.io/github/forks/eoneill/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="Forks on GitHub"></a> <a href="https://github.com/eoneill/eyeglass-restyle/" target=_blank><img src=//img.shields.io/github/stars/eoneill/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="Stars on GitHub"></a> <a href=https://github.com/eoneill/eyeglass-restyle/issues target=_blank><img src=//img.shields.io/github/issues-raw/eoneill/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="Issues on GitHub"></a> <a href=https://travis-ci.org/eoneill/eyeglass-restyle target=_blank><img src=//img.shields.io/travis/eoneill/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="Build Status"></a> <a href=https://www.npmjs.com/package/eyeglass-restyle target=_blank><img src=//img.shields.io/npm/v/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="Version"></a> <a href=https://github.com/eoneill/eyeglass-restyle/blob/master/LICENSE target=_blank><img src=//img.shields.io/npm/l/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="License"></a></p></div></footer><script src=//www.restylecss.com/scripts/default.js></script></body></html>
+
+<span class=hljs-variable>@include</span> <span class=hljs-function>restyle-define</span>(example, (
+  <span class=hljs-attribute>color</span>: black,
+  <span class=hljs-function>restyle-function</span>(font-color-invert): <span class=hljs-function>this</span>(color)
+));
+</code></pre><p>This will now work the way we intended.</p><ul class=page-tags><li class=tag><a href=//www.restylecss.com/topics/restyle>restyle</a></li><li class=tag><a href=//www.restylecss.com/topics/function>function</a></li><li class=tag><a href=//www.restylecss.com/topics/special-properties>special properties</a></li></ul></div></main></div><footer id=global-footer><div><p class=copyright><a href=http://engineering.linkedin.com target=_blank><span class=holder>LinkedIn Corporation</span> &copy; <span class=year>2016</span></a></p><p class=badges><a href=https://github.com/eoneill/eyeglass-restyle/fork target=_blank><img src=//img.shields.io/github/forks/eoneill/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="Forks on GitHub"></a> <a href="https://github.com/eoneill/eyeglass-restyle/" target=_blank><img src=//img.shields.io/github/stars/eoneill/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="Stars on GitHub"></a> <a href=https://github.com/eoneill/eyeglass-restyle/issues target=_blank><img src=//img.shields.io/github/issues-raw/eoneill/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="Issues on GitHub"></a> <a href=https://travis-ci.org/eoneill/eyeglass-restyle target=_blank><img src=//img.shields.io/travis/eoneill/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="Build Status"></a> <a href=https://www.npmjs.com/package/eyeglass-restyle target=_blank><img src=//img.shields.io/npm/v/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="Version"></a> <a href=https://github.com/eoneill/eyeglass-restyle/blob/master/LICENSE target=_blank><img src=//img.shields.io/npm/l/eyeglass-restyle.svg?style&#x3D;flat-square class=badge alt="License"></a></p></div></footer><script src=//www.restylecss.com/scripts/default.js></script></body></html>
